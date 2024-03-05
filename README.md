@@ -17,7 +17,7 @@ The project follows the Page Object Model (POM) design pattern, enhancing modula
 The pages directory encapsulates classes representing specific pages on the Flip.ro website, each handling interactions and elements unique to that page.
 For more details about this topics ,you can find [here](https://selenium-python.readthedocs.io/page-objects.html)
 
-![DesignDataBases](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/Captur%C4%83%20de%20ecran%202024-03-05%20212102.png)
+![Project Structure](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/Captur%C4%83%20de%20ecran%202024-03-05%20212102.png)
 
 - **locators**: Holds locator classes that store all the locators (CSS selectors, XPath ,etc.) used in the project. This separation ensures easy maintenance and updates if the locators change.
 ```python
@@ -77,8 +77,36 @@ In this class, we have methods for setting an email, a password, clicking the su
 This class uses intelligent waits, such as WebDriverWait and expected_conditions, to ensure synchronization between automated actions and the actual state of the web page. It also imports the LoginLocators class from the Locators module to centrally manage and organize locators specific to the login page
 
 - **tests**: Contains the test scripts organized based on functionalities. Currently, you have the `LoginTest` and `Search_user_test` directories.
+  
+These imports are used in the login test file and serve different purposes:
+```python
+import time
+import unittest
+from datetime import datetime
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from pages.login_pages import LoginPage as LP
+from Locators.Login_pages_locators import LoginLocators as Selector
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+```
+time: Used for introducing delays in the test execution, providing a pause between actions.
 
+unittest: A module that provides a **testing framework**, allowing the creation and execution of test cases.
 
+datetime: Offers classes for working with dates and times. In this context, it  be used datetime to append a timestamp to the screenshot filename to ensure each screenshot has a unique identifier, making it easier to organize and identify captured images:
+
+webdriver: Part of the Selenium library, this module provides an API for interacting with web browsers.
+
+By: Enumerations used by the expected_conditions module to specify the way in which elements should be located.
+
+LP (LoginPage): Alias for the LoginPage class from the pages.login_pages module. Represents the **page object for the login functionality.**
+
+Selector (LoginLocators): Alias for the LoginLocators class from the Locators.Login_pages_locators module. Contains locators specific to the login page.
+
+EC (expected_conditions): A module providing a set of predefined conditions to use with WebDriverWait. These conditions are used for intelligent waits in synchronization with the web page state.
+
+WebDriverWait: A class in Selenium that allows waiting for certain conditions to be met before proceeding. It's often used with expected_conditions for synchronization
 
 
 # Tehnical information
