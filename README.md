@@ -150,7 +150,11 @@ This code sets up and tears down the WebDriver for the login feature tests. In t
 ```
 Below is a type of test from the 8 tests in this class. This test case checks the behavior of the login functionality when the password field is left incomplete. This is a negative testing scenario (logging in without completing the password field). The test sets an email, clicks the submit button, captures the actual error message, and compares it with the expected result ('Parola lipsește.'). If the actual and expected results don't match, an AssertionError is raised. In case of failure, a screenshot is captured and saved with a timestamp in the filename for identification. The test result, along with the captured screenshot, is then reported.
 
-
+- **reports**: Automatically generated HTML reports after each test suite run. These reports provide detailed information about the test results.
+- **screenshots**: Automatically captured screenshots for failed test cases. These images are helpful for identifying and debugging issues.
+- **venv**: The virtual environment directory.
+- **requirements.txt**: Lists all the required dependencies for the project. Install these dependencies before running the tests.
+- **test_suite.py**: Script to run the entire test suite using the provided runner.
 # Tehnical information
 
 
