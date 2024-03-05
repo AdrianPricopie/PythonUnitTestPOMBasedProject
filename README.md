@@ -70,6 +70,11 @@ class LoginPage:
         return WebDriverWait(self.driver, 15).until(
             EC.visibility_of_element_located(LoginLocators.ERROR_MESSAGE_FOR_AUTHENTIFICATION)).text
  ```
+__init__(self, driver): The class constructor that initializes the driver attribute, representing the Selenium WebDriver.
+
+In this class, we have methods for setting an email, a password, clicking the submit button, and a method that waits for the visibility of the error message, returning its text and others. These methods are designed to be utilized further in the test class.
+
+This class uses intelligent waits, such as WebDriverWait and expected_conditions, to ensure synchronization between automated actions and the actual state of the web page. It also imports the LoginLocators class from the Locators module to centrally manage and organize locators specific to the login page
 
 
 
