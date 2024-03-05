@@ -76,6 +76,9 @@ In this class, we have methods for setting an email, a password, clicking the su
 
 This class uses intelligent waits, such as WebDriverWait and expected_conditions, to ensure synchronization between automated actions and the actual state of the web page. It also imports the LoginLocators class from the Locators module to centrally manage and organize locators specific to the login page
 
+- **tests**: Contains the test scripts organized based on functionalities. Currently, you have the `LoginTest` and `Search_user_test` directories.
+
+
 
 
 # Tehnical information
