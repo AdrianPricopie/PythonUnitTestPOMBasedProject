@@ -107,6 +107,48 @@ Selector (LoginLocators): Alias for the LoginLocators class from the Locators.Lo
 EC (expected_conditions): A module providing a set of predefined conditions to use with WebDriverWait. These conditions are used for intelligent waits in synchronization with the web page state.
 
 WebDriverWait: A class in Selenium that allows waiting for certain conditions to be met before proceeding. It's often used with expected_conditions for synchronization
+```python
+class TestLoginFeature(unittest.TestCase):
+
+    def setUp(self):
+        # Setting up the WebDriver and navigating to the login page
+
+        self.driver = webdriver.Chrome()
+        self.driver.get('https://flip.ro/autentifica-te/')
+        self.driver.maximize_window()
+
+        # Accepting cookies
+
+        self.driver.find_element(By.XPATH, '//span[contains(text(), "Da, sunt de acord")]').click()
+        self.driver.implicitly_wait(5)
+        self.LoginPage = LP(self.driver)
+
+    def tearDown(self):
+        # Closing the browser after each test
+        self.driver.quit()
+```
+This code sets up and tears down the WebDriver for the login feature tests. In the setUp method, it initializes the WebDriver, navigates to the login page, accepts cookies, and creates an instance of the LoginPage class. The tearDown method closes the browser after each test.
+
+```python
+ def test_login_without_complete_password_field(self):
+        self.LoginPage.SetEmail('Bobita123@yahoo.com')
+        self.LoginPage.ClickSubmitButton()
+        actual_result = self.LoginPage.Get_error_message()
+        expected_result = 'Parola lipsește.'
+        try:
+            self.assertEqual(actual_result, expected_result,
+                             f"the {actual_result} doesn't correspond to the expected result")
+        except AssertionError:
+            # Capture and save screenshot in case of failure
+            screenshot_name = 'C:/Users/adi_d/PycharmProjects/ProiectUnitTestExamen/screenshots/' + 'Error_message_for_login' + '_' + datetime.now().strftime(
+                '%d-%m-%Y') + '.png'
+
+            self.driver.get_screenshot_as_file(screenshot_name)
+
+            # Raise AssertionError without traceback information
+            raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
+```
+Below is a type of test from the 8 tests in this class. This test case checks the behavior of the login functionality when the password field is left incomplete. This is a negative testing scenario (logging in without completing the password field). The test sets an email, clicks the submit button, captures the actual error message, and compares it with the expected result ('Parola lipsește.'). If the actual and expected results don't match, an AssertionError is raised. In case of failure, a screenshot is captured and saved with a timestamp in the filename for identification. The test result, along with the captured screenshot, is then reported.
 
 
 # Tehnical information
