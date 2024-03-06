@@ -159,21 +159,21 @@ Below is a type of test from the 8 tests in this class. This test case checks th
 # Feature under the tests
 
  ## Login Functionality Testing:
+1. Validate login with correct credentials.
+2. Test login with correct username and incorrect password.
+3. Test login with a short password.
+4. Test login with wrong credentials.
+5. Test login with an incorrect email format.
+6. Test login without completing any field.
+7. Test login without completing the password field.
 
-- Validate login with correct credentials.
-- Test login with correct username and incorrect password.
-- Test login with a short password.
-- Test login with wrong credentials.
-- Test login with an incorrect email format.
-- Test login without completing any field.
-- Test login without completing the password field.
 
 ## Search Functionality Testing:
 
-- Verify product search functionality.
-- Test searching for a product that exists.
-- Test searching for a product that doesn't exist.
-- Test filtering search results by price range.
+8. Verify product search functionality.
+9. Test searching for a product that exists.
+10. Test searching for a product that doesn't exist.
+11. Test filtering search results by price range.
 
 # Getting Started  :pushpin:
 
