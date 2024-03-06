@@ -156,9 +156,9 @@ Below is a type of test from the 8 tests in this class. This test case checks th
 - **requirements.txt**: Lists all the required dependencies for the project. Install these dependencies before running the tests.
 - **test_suite.py**: Script to run the entire test suite using the provided runner.
 
-# Feature under the tests
+## Feature under the tests
 
- ## Login Functionality Testing:
+ ### Login Functionality Testing:
 1. Validate login with correct credentials.
 2. Test login with correct username and incorrect password.
 3. Test login with a short password.
@@ -168,7 +168,7 @@ Below is a type of test from the 8 tests in this class. This test case checks th
 7. Test login without completing the password field.
 
 
-## Search Functionality Testing:
+### Search Functionality Testing:
 
 8. Verify product search functionality.
 9. Test searching for a product that exists.
