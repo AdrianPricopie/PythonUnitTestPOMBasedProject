@@ -38,7 +38,7 @@ The project follows the Page Object Model (POM) design pattern, enhancing modula
 The pages directory encapsulates classes representing specific pages on the Flip.ro website, each handling interactions and elements unique to that page.
 For more details about this topics ,you can find [here](https://selenium-python.readthedocs.io/page-objects.html)
 
-![Project Structure](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/Captur%C4%83%20de%20ecran%202024-03-05%20212102.png)
+
 
 - **locators**: Holds locator classes that store all the locators (CSS selectors, XPath ,etc.) used in the project. This separation ensures easy maintenance and updates if the locators change.
 ```python
@@ -231,9 +231,21 @@ Execute the automated tests to verify the Flip.ro website's login and search fun
 
 # Reports
 
+The project includes HTML reports generated after each test suite run, offering detailed insights into test results. The reports provide a clear overview of the tested functionalities, making it easy to identify any issues that may arise during testing.
+
+- Below, you can see the report generated on March 5, 2024, for the Login and Search Functionality
+
+![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/TestReportLogin.png)
+![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/TestReportSearch.png)
 
 
 # Clonclusion
+In conclusion, the automated testing project for the Flip.ro website has been successfully implemented using Selenium and the unittest framework. The Page Object Model (POM) design pattern was employed to enhance modularity and maintainability, allowing for efficient management of locators, pages, and test scripts.
 
+The project covers critical functionalities such as login and search, with a focus on various test scenarios to ensure robustness. The tests are organized into a structured project layout, including locators, pages, tests, reports, screenshots, and a virtual environment. The project also provides clear documentation on how to clone the repository, install dependencies, activate the virtual environment, and run the test suite
+
+Automated tests have been designed to cover a range of scenarios, including positive and negative cases for the login functionality, as well as comprehensive testing of the search functionality. Screenshots are captured for failed test cases, providing visual aids for debugging and issue identification.
+
+In the future, the project can be expanded to cover additional functionalities and scenarios, ensuring continuous testing and validation of the Flip.ro webshop. Regular maintenance and updates to locators and test scripts will be crucial as the website evolves.
 
 
