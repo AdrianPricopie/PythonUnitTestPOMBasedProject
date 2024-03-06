@@ -1,3 +1,24 @@
+# Automated Testing Project for Flip.ro Website
+Welcome to the documentation for the automated testing project designed for the Flip.ro website. This project leverages Selenium and the unittest framework to implement a robust suite of tests, ensuring the functionality and reliability of Flip.ro's webshop.
+## Table of Contents
+
+1. [Introduction/Tools and version](#tools-and-versions)
+2. [Project Structure](#project-structure)
+    - [Locators](#locators)
+    - [Pages](#pages)
+    - [Tests](#tests)
+    - [Reports, Screenshots, venv, Requirements.txt](#directories-and-files)
+    - [Test Suite Script](#test-suite-script)
+3. [Features Under Testing](#features-under-testing)
+    - [Login Functionality Testing](#login-functionality-testing)
+    - [Search Functionality Testing](#search-functionality-testing)
+4. [Getting Started](#getting-started)
+    - [Clone the Repository](#clone-the-repository)
+    - [Install Dependencies](#install-dependencies)
+    - [Activate the Virtual Environment](#activate-the-virtual-environment)
+    - [Run the Test Suite](#run-the-test-suite)
+5. [Conclusion](#conclusion)
+
 
 # Introduction :notebook:
 
