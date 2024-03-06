@@ -1,4 +1,4 @@
-# Automated Testing Project for Flip.ro Website
+# Automated Testing Project for Flip.ro Website :computer:
 Welcome to the documentation for the automated testing project designed for the Flip.ro website. This project leverages Selenium and the unittest framework to implement a robust suite of tests, ensuring the functionality and reliability of Flip.ro's webshop.
 ## Table of Contents
 
