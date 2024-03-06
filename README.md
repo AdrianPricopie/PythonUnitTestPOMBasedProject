@@ -75,12 +75,10 @@ class LoginPage:
 
     def SetEmail(self, user_email):
         email = self.driver.find_element(*LoginLocators.EMAIL_SELECTOR)
-        email.clear()
         email.send_keys(user_email)
 
     def SetPassword(self, user_password):
         password = self.driver.find_element(*LoginLocators.PASSWORD_SELECTOR)
-        password.clear()
         password.send_keys(user_password)
 
     def ClickSubmitButton(self):
