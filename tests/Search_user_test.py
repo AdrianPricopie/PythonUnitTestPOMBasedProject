@@ -64,8 +64,9 @@ class TestSearchFeature(unittest.TestCase):
     def test_filter_by_price(self):
         self.Search.Enter_product('Iphone 13')
         self.Search.click()
+        time.sleep(4)
         self.Search.handle_price()
-        time.sleep(5)
+        time.sleep(2)
         interval_cautare = (200, 3515)
         price = self.Search.get_prices_for_products()
         for elemente in price:

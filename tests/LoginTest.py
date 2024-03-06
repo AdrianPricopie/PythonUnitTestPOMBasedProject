@@ -1,10 +1,8 @@
 import time
 import unittest
 from datetime import datetime
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
 from pages.login_pages import LoginPage as LP
 from Locators.Login_pages_locators import LoginLocators as Selector
 from selenium.webdriver.support import expected_conditions as EC

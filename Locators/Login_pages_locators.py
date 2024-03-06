@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
+
 class LoginLocators:
     EMAIL_SELECTOR = (By.CSS_SELECTOR, 'input[autocomplete="current-email"]')
     PASSWORD_SELECTOR = (By.CSS_SELECTOR, 'input[autocomplete="current-password"]')
