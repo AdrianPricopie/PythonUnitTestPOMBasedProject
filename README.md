@@ -175,30 +175,31 @@ Below is a type of test from the 8 tests in this class. This test case checks th
 10. Test searching for a product that doesn't exist.
 11. Test filtering search results by price range.
 
-# Getting Started  :pushpin:
+## Getting Started  :pushpin:
 
-Clone the repository.
+1. **Clone the Repository:**
 
-```git
-  git clone https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject.git
-```
+    ```bash
+    git clone https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject.git
+    ```
 
-Install the required dependencies.
+2. **Install Dependencies:**
 
-```git
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Activate the venv
-```
-venv/Scripts/Activate
-```
+3. **Activate the Virtual Environment:**
 
-Run the test suite using the provided runner.
+    ```bash
+    venv/Scripts/Activate
+    ```
 
-```terminal python
-python -m unittest Test_Suite.py
-```
+4. **Run the Test Suite:**
+
+    ```bash
+    python -m unittest Test_Suite.py
+    ```
 
 
 
