@@ -155,11 +155,6 @@ Below is a type of test from the 8 tests in this class. This test case checks th
 - **venv**: The virtual environment directory.
 - **requirements.txt**: Lists all the required dependencies for the project. Install these dependencies before running the tests.
 - **test_suite.py**: Script to run the entire test suite using the provided runner.
-# Tehnical information
-
-
-
-
 
 # Feature under the tests
 
