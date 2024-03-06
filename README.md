@@ -1,16 +1,16 @@
 
-# Introduction
+# Introduction :notebook:
 
 This project aims to implement automated tests for the Flip.ro website using Selenium and unittest. 
 The primary objectives include simulating user interactions and navigating through the webshop's various functionalities.
 
-- editor code used: pycharm
-- version used:
-```bash
-selenium 4.17.2
-webdriver-manager 4.0.1
-html-testRunner 1.2.1
-```
+- **editor code used: pycharm**
+- **Library Versions:**
+    ```bash
+     selenium 4.17.2
+     webdriver-manager 4.0.1
+     html-testRunner 1.2.1
+    ```
 # Project Structure
 
 The project follows the Page Object Model (POM) design pattern, enhancing modularity and maintainability.
