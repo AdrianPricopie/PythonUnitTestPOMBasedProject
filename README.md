@@ -180,7 +180,7 @@ Below is a type of test from the 8 tests in this class. This test case checks th
 - Test searching for a product that doesn't exist.
 - Test filtering search results by price range.
 
-# Getting Started
+# Getting Started  :pushpin:
 
 Clone the repository.
 
