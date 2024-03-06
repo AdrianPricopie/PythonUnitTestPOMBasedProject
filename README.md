@@ -194,7 +194,17 @@ Install the required dependencies.
 pip install -r requirements.txt
 ```
 
+Activate the venv
+```
+venv/Scripts/Activate
+```
+
 Run the test suite using the provided runner.
+
+```terminal python
+python -m unittest Test_Suite.py
+```
+
 
 
 # Usage
