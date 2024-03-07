@@ -237,7 +237,8 @@ The project includes HTML reports generated after each test suite run, offering 
 ![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/TestReportSearch.png)
 
 
-# Clonclusion
+# Conclusions
+
 In conclusion, the automated testing project for the Flip.ro website has been successfully implemented using Selenium and the unittest framework. The Page Object Model (POM) design pattern was employed to enhance modularity and maintainability, allowing for efficient management of locators, pages, and test scripts.
 
 The project covers critical functionalities such as login and search, with a focus on various test scenarios to ensure robustness. The tests are organized into a structured project layout, including locators, pages, tests, reports, screenshots, and a virtual environment. The project also provides clear documentation on how to clone the repository, install dependencies, activate the virtual environment, and run the test suite
