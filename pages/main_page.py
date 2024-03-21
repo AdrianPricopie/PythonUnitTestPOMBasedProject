@@ -17,7 +17,8 @@ class MainPage:
 
     def get_product_title_text(self):
         title_products = WebDriverWait(self.driver, 15).until(
-            EC.visibility_of_all_elements_located(Locators.PRODUCT_ITEM_TITLE))
+            EC.presence_of_all_elements_located(Locators.PRODUCT_ITEM_TITLE))
+        print(title_products[0].text)
         return title_products[0].text
 
     def get_title_message_for_inexisting_product(self):
@@ -28,7 +29,7 @@ class MainPage:
     def handle_price(self):
         actions = ActionChains(self.driver)
         element = self.driver.find_element(*Locators.PRICE_SLIDER_FILTER)
-        # 200-3515
+        # 200-3280
         actions.drag_and_drop_by_offset(element, -120, 0).perform()
 
     def get_prices_for_products(self):
@@ -47,3 +48,6 @@ class MainPage:
 
         print(get_price)
         return get_price
+
+    def accept_cookies(self):
+        self.driver.find_element(*Locators.COOKIE_ACCEPT_BUTTON).click()

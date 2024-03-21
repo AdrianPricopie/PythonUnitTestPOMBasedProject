@@ -17,6 +17,7 @@ class TestSuite(unittest.TestCase):
         runner = HtmlTestRunner.HTMLTestRunner(
 
             report_title='TestReport',
+            combine_reports=True,
             report_name='Smoke Test Result'
         )
 

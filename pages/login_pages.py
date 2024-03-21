@@ -33,3 +33,6 @@ class LoginPage:
     def ClickLogoutButton(self):
         menu_list_item = self.driver.find_elements(*LoginLocators.ACCOUNT_SIDE_MENU_BAR)
         menu_list_item[-1].click()
+
+    def accept_cookies(self):
+        self.driver.find_element(*LoginLocators.COOKIE_ACCEPT_BUTTON).click()

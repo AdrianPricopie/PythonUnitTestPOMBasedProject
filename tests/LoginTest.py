@@ -2,7 +2,6 @@ import time
 import unittest
 from datetime import datetime
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from pages.login_pages import LoginPage as LP
 from Locators.Login_pages_locators import LoginLocators as Selector
 from selenium.webdriver.support import expected_conditions as EC
@@ -18,11 +17,13 @@ class TestLoginFeature(unittest.TestCase):
         self.driver.get('https://flip.ro/autentifica-te/')
         self.driver.maximize_window()
 
-        # Accepting cookies
-
-        self.driver.find_element(By.XPATH, '//span[contains(text(), "Da, sunt de acord")]').click()
         self.driver.implicitly_wait(5)
+        # Creating an object for the LoginPage class, which
+        # contains the necessary methods for the login page
         self.LoginPage = LP(self.driver)
+
+        # Accepting cookies
+        self.LoginPage.accept_cookies()
 
     def tearDown(self):
         # Closing the browser after each test
@@ -53,7 +54,7 @@ class TestLoginFeature(unittest.TestCase):
         self.LoginPage.ClickSubmitButton()
         # Checking the browser's native validation message for email field
         pop_mesage = self.driver.find_element(*Selector.EMAIL_SELECTOR).get_attribute('validationMessage')
-        expected_result = f"Includeți semnul „@” în adresa de e-mail. Din adresa „{address_email}” lipsește semnul „@”."
+        expected_result = f"Please include an '@' in the email address. '{address_email}' is missing an '@'."
         self.assertEqual(pop_mesage, expected_result, f"the {pop_mesage} doesn't correspond to the expected result")
 
     def test_login_with_correct_credentials(self):

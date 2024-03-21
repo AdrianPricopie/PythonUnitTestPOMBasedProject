@@ -2,7 +2,6 @@ import time
 import unittest
 from datetime import datetime
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from pages.main_page import MainPage as MP
 
 
@@ -17,9 +16,9 @@ class TestSearchFeature(unittest.TestCase):
 
         # Accepting cookies
 
-        self.driver.find_element(By.XPATH, '//span[contains(text(), "Da, sunt de acord")]').click()
         self.driver.implicitly_wait(5)
         self.Search = MP(self.driver)
+        self.Search.accept_cookies()
 
     def tearDown(self):
         # Closing the browser after each test
@@ -30,7 +29,6 @@ class TestSearchFeature(unittest.TestCase):
         self.Search.click()
         actual_result = self.Search.get_product_title_text()
         expected_result = 'iPhone 14'
-        time.sleep(2)
         try:
             self.assertIn(expected_result, actual_result, f"The expected result is not found in the {actual_result}.")
         except AssertionError:
@@ -50,7 +48,8 @@ class TestSearchFeature(unittest.TestCase):
         expected_result = 'Nu există produse pentru filtrele aplicate.'
         time.sleep(2)
         try:
-            self.assertEqual(actual_result, expected_result, f"The expected result is not found in the {actual_result}.")
+            self.assertEqual(actual_result, expected_result,
+                             f"The expected result is not found in the {actual_result}.")
         except AssertionError:
             # Capture and save screenshot in case of failure
             screenshot_name = 'C:/Users/adi_d/PycharmProjects/ProiectUnitTestExamen/screenshots/' + 'Error_message_for_search_a_product_that_is_not_exist' + '_' + datetime.now().strftime(
@@ -67,7 +66,7 @@ class TestSearchFeature(unittest.TestCase):
         time.sleep(4)
         self.Search.handle_price()
         time.sleep(2)
-        interval_cautare = (200, 3515)
+        interval_cautare = (200, 3280)
         price = self.Search.get_prices_for_products()
         for elemente in price:
             try:
