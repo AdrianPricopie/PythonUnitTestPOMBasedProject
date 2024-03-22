@@ -4,11 +4,6 @@ Welcome to the documentation for the automated testing project designed for the 
 
 1. [Introduction/Tools and version](#introduction-notebook)
 2. [Project Structure](#project-structure)
-    - [Locators](#locators)
-    - [Pages](#pages)
-    - [Tests](#tests)
-    - [Reports, Screenshots, venv, Requirements.txt,Utils](#directories-and-files)
-    - [Test Suite Script](#test-suite-script)
 3. [Features Under Testing](#features-under-testing)
     - [Login Functionality Testing](#login-functionality-testing)
     - [Search Functionality Testing](#search-functionality-testing)
