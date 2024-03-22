@@ -364,11 +364,16 @@ Execute the automated tests to verify the Flip.ro website's login and search fun
 
 The project includes HTML reports generated after each test suite run, offering detailed insights into test results. The reports provide a clear overview of the tested functionalities, making it easy to identify any issues that may arise during testing.
 
-- Below, you can see the report generated on March 5, 2024, for the Login and Search Functionality
+- Below, you can see the report generated on March 5, 2024, for the sogin and search functionality
 
 ![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/TestReportLogin.png)
 ![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/TestReportSearch.png)
 
+-Below,you can see the combine report generated on March 22,2024 for the login and search functionality
+
+![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/Report_Combine_2024.png)
+
+All the tests are passed.
 
 # Conclusions
 
