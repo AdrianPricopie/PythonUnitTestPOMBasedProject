@@ -60,7 +60,7 @@ class TestSearchFeature(unittest.TestCase):
             # Raise AssertionError without traceback information
             raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
 
-    def test_filter_by_price(self):
+    def test_filter_by_price_in_rage_200_3280(self):
         self.Search.Enter_product('Iphone 13')
         self.Search.click()
         time.sleep(4)

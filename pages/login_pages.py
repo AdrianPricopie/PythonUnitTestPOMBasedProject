@@ -36,3 +36,11 @@ class LoginPage:
 
     def accept_cookies(self):
         self.driver.find_element(*LoginLocators.COOKIE_ACCEPT_BUTTON).click()
+
+    def get_logout_succesfully_message(self):
+        return WebDriverWait(self.driver, 15).until(
+            EC.visibility_of_element_located(LoginLocators.LOGOUT_SUCCES_MESSAGE)
+        ).text
+
+    def get_validation_message_for_email_field(self):
+        return self.driver.find_element(*LoginLocators.EMAIL_SELECTOR).get_attribute('validationMessage')

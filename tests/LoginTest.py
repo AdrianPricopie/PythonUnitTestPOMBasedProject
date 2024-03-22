@@ -3,9 +3,7 @@ import unittest
 from datetime import datetime
 from selenium import webdriver
 from pages.login_pages import LoginPage as LP
-from Locators.Login_pages_locators import LoginLocators as Selector
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+from Utils.UtilsForLoginTests import DataTest
 
 
 class TestLoginFeature(unittest.TestCase):
@@ -25,13 +23,16 @@ class TestLoginFeature(unittest.TestCase):
         # Accepting cookies
         self.LoginPage.accept_cookies()
 
+        # Create an object for the DataTest class,which contains the necessary test data
+        self.DataTest = DataTest
+
     def tearDown(self):
         # Closing the browser after each test
         self.driver.quit()
 
     def test_login_with_wrong_credentials(self):
-        self.LoginPage.SetEmail('Grigore@yahoo.com')
-        self.LoginPage.SetPassword('Test123@')
+        self.LoginPage.SetEmail(self.DataTest.wrong_email)
+        self.LoginPage.SetPassword(self.DataTest.wrong_pass)
         self.LoginPage.ClickSubmitButton()
         actual_result = self.LoginPage.Get_error_message()
         expected_result = 'Această adresă de email nu este asociată unui cont existent.'
@@ -48,34 +49,31 @@ class TestLoginFeature(unittest.TestCase):
 
     def test_login_with_wrong_format_email(self):
         # Testing error handling when an incorrect email format is provided
-        address_email = 'Test123zyahoo.com'
-        self.LoginPage.SetEmail(address_email)
-        self.LoginPage.SetPassword('Test123')
+        self.LoginPage.SetEmail(self.DataTest.wrong_format_email)
+        self.LoginPage.SetPassword(self.DataTest.correct_pass)
         self.LoginPage.ClickSubmitButton()
         # Checking the browser's native validation message for email field
-        pop_mesage = self.driver.find_element(*Selector.EMAIL_SELECTOR).get_attribute('validationMessage')
-        expected_result = f"Please include an '@' in the email address. '{address_email}' is missing an '@'."
+        pop_mesage = self.LoginPage.get_validation_message_for_email_field()
+        expected_result = (f"Please include an '@' in the email address. '{self.DataTest.wrong_format_email}' is "
+                           f"missing an '@'.")
         self.assertEqual(pop_mesage, expected_result, f"the {pop_mesage} doesn't correspond to the expected result")
 
     def test_login_with_correct_credentials(self):
         # Test login with correct email and password credentials
-
-        self.LoginPage.SetEmail("Test123z@yahoo.com")
-        self.LoginPage.SetPassword('Test123')
+        self.LoginPage.SetEmail(self.DataTest.correct_email)
+        self.LoginPage.SetPassword(self.DataTest.correct_pass)
         self.LoginPage.ClickSubmitButton()
         elements_actual_text = self.LoginPage.Get_account_side_menu_bar()
         # Expected menu items after successful login
-        expected_elements = ['Cumparaturile mele', 'Vanzarile mele', 'Garantiile mele', 'Asigurarile mele', 'Retur',
-                             'Setari cont', 'Logout']
+        expected_elements = self.DataTest.items_pressent_in_login_dashboard
         # Verifying if the expected elements are present in the menu
         for expected_element in expected_elements:
             self.assertIn(expected_element, elements_actual_text,
                           f"Elementul '{expected_element}' lipsește din meniu,{elements_actual_text}.")
 
     def test_login_with_correct_login_field_and_wrong_password(self):
-        self.LoginPage = LP(self.driver)
-        self.LoginPage.SetEmail("Test123z@yahoo.com")
-        self.LoginPage.SetPassword('Testcdsad2@')
+        self.LoginPage.SetEmail(self.DataTest.correct_email)
+        self.LoginPage.SetPassword(self.DataTest.wrong_pass)
         self.LoginPage.ClickSubmitButton()
         actual_result = self.LoginPage.Get_error_message()
         expected_result = 'Parola curentă nu corespunde cu cea pe care ai introdus-o.'
@@ -83,8 +81,8 @@ class TestLoginFeature(unittest.TestCase):
                          f"the {actual_result} doesn't correspond to the expected result")
 
     def test_login_with_short_password(self):
-        self.LoginPage.SetEmail("Test123z@yahoo.com")
-        self.LoginPage.SetPassword('Testc')
+        self.LoginPage.SetEmail(self.DataTest.correct_email)
+        self.LoginPage.SetPassword(self.DataTest.short_pass)
         self.LoginPage.ClickSubmitButton()
         actual_result = self.LoginPage.Get_error_message()
         expected_result = 'Parola trebuie sa aiba cel putin 6 caractere'
@@ -92,7 +90,7 @@ class TestLoginFeature(unittest.TestCase):
                          f"the {actual_result} doesn't correspond to the expected result")
 
     def test_login_without_complete_password_field(self):
-        self.LoginPage.SetEmail('Bobita123@yahoo.com')
+        self.LoginPage.SetEmail(self.DataTest.correct_email)
         self.LoginPage.ClickSubmitButton()
         actual_result = self.LoginPage.Get_error_message()
         expected_result = 'Parola lipsește.'
@@ -111,15 +109,12 @@ class TestLoginFeature(unittest.TestCase):
 
     def test_login_and_logout(self):
         # Test login and logout
-        self.LoginPage.SetEmail("Test123z@yahoo.com")
-        self.LoginPage.SetPassword('Test123')
+        self.LoginPage.SetEmail(self.DataTest.correct_email)
+        self.LoginPage.SetPassword(self.DataTest.correct_pass)
         self.LoginPage.ClickSubmitButton()
         self.LoginPage.ClickLogoutButton()
         time.sleep(2)
-        success_message = WebDriverWait(self.driver, 15).until(
-            EC.visibility_of_element_located(Selector.LOGOUT_SUCCES_MESSAGE)
-        )
-        actual_result = success_message.text
+        actual_result = self.LoginPage.get_logout_succesfully_message()
         expected_result = 'Te-ai deconectat cu succes'
         assert actual_result == expected_result, (f'The actual result "{actual_result}" does not match the expected '
                                                   f'result')
