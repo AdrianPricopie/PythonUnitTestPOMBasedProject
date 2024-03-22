@@ -100,17 +100,12 @@ This class uses intelligent waits, such as WebDriverWait and expected_conditions
   
 These imports are used in the login test file and serve different purposes:
 ```python
-import time
 import unittest
 from datetime import datetime
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from pages.login_pages import LoginPage as LP
-from Locators.Login_pages_locators import LoginLocators as Selector
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+from Utils.UtilsDataForTests import DataTest
 ```
-time: Used for introducing delays in the test execution, providing a pause between actions.
 
 unittest: A module that provides a **testing framework**, allowing the creation and execution of test cases.
 
@@ -118,11 +113,11 @@ datetime: Offers classes for working with dates and times. In this context, it  
 
 webdriver: Part of the Selenium library, this module provides an API for interacting with web browsers.
 
-By: Enumerations used by the expected_conditions module to specify the way in which elements should be located.
-
 LP (LoginPage): Alias for the LoginPage class from the pages.login_pages module. Represents the **page object for the login functionality.**
 
 Selector (LoginLocators): Alias for the LoginLocators class from the Locators.Login_pages_locators module. Contains locators specific to the login page.
+
+Utils.UtilsDataForTests importing some test data. It's quite common to have utilities that provide test data or helper functions for test automation.
 
 EC (expected_conditions): A module providing a set of predefined conditions to use with WebDriverWait. These conditions are used for intelligent waits in synchronization with the web page state.
 
