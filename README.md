@@ -219,11 +219,78 @@ This **test case**, named test_login_without_complete_password_field, is a part 
    - **Expected Result:**
         - The error message "Parola curentă nu corespunde cu cea pe care ai introdus-o." should be displayed.
 
-4. **Test login with a short password.**
-5. **Test login with wrong credentials.**
-6. **Test login with an incorrect email format.**
-7. **Test login without completing any field.**
-8. **Test login without completing the password field.**
+3. **Test login with short password.**
+   - **Test Step:**
+        1. Set the email field with the correct email address obtained from the test data.
+        2. Set the password field with a short password obtained from the test data. 
+        3. Click the submit button to attempt login.
+        4. Retrieve the error message displayed after the login attempt.
+        5. Define the expected error message for a short password.
+        6. Verify if the actual error message matches the expected error message.
+        7. If the error message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
+
+   - **Expected Result:**
+        - The error message "Parola trebuie sa aiba cel putin 6 caractere" should be displayed.
+4. **Test login with wrong credentials.**
+   - **Test Step:**
+        1. Set the email field with a wrong email address obtained from the test data.
+        2. Set the password field with a wrong password obtained from the test data. 
+        3. Click the submit button to attempt login.
+        4. Retrieve the error message displayed after the login attempt.
+        5. Define the expected error message for wrong credentials.
+        6. Verify if the actual error message matches the expected error message.
+        7. If the error message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
+
+   - **Expected Result:**
+        - The error message "Această adresă de email nu este asociată unui cont existent." should be displayed.
+          
+5. **Test login with wrong format email.**
+   - **Test Step:**
+        1. Set the email field with an email address with incorrect format obtained from the test data.
+        2. Set the password field with the correct password obtained from the test data. 
+        3. Click the submit button to attempt login.
+        4. Retrieve the validation message displayed for the email field.
+        5. Define the expected validation message for an incorrect email format.
+        6. Verify if the actual validation message matches the expected validation message.
+        7. If the validation message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
+
+   - **Expected Result:**
+        - The validation message "Please include an '@' in the email address. '{email}' is missing an '@'." should be displayed.
+    
+6. **Test login without completing any field.**
+   - **Test Step:**
+        1. Click the submit button without providing any credentials.
+        2. Retrieve the error message displayed after the login attempt.
+        3. Define the expected error message for missing email.
+        4. Verify if the actual error message matches the expected error message.
+        5. If the error message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
+
+   - **Expected Result:**
+        - The error message "Adresa de e-mail lipsește." should be displayed.
+7. **Test login with correct username and without complete password field .**
+   - **Test Step:**
+        1. Set the email field with the correct email address obtained from the test data.
+        2. Click the submit button without providing any password.
+        3. Retrieve the error message displayed after the login attempt.
+        4. Define the expected error message for a missing password.
+        5. Verify if the actual error message matches the expected error message.
+        6. If the error message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
+
+   - **Expected Result:**
+        - The error message "Parola lipsește." should be displayed.
+
+8. **Test login and logout.**
+   - **Test Step:**
+        1. Set the email field with the correct email address obtained from the test data.
+        2. Set the password field with the correct password obtained from the test data. 
+        3. Click the submit button to attempt login.
+        4. Click the logout button to logout from the account.
+        5. Retrieve the success message displayed after logging out.
+        6. Define the expected success message for logging out.
+        7. Verify if the actual success message matches the expected success message.
+
+   - **Expected Result:**
+        - The success message "Te-ai deconectat cu succes" should be displayed.
 
 #### Search Functionality Testing:
 
