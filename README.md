@@ -2,7 +2,7 @@
 Welcome to the documentation for the automated testing project designed for the Flip.ro website. This project leverages Selenium and the unittest framework to implement a robust suite of tests, ensuring the functionality and reliability of Flip.ro's webshop.
 ## Table of Contents
 
-1. [Introduction/Tools and version](#tools-and-versions)
+1. [Introduction/Tools and version](#introduction-notebook)
 2. [Project Structure](#project-structure)
     - [Locators](#locators)
     - [Pages](#pages)
