@@ -189,24 +189,37 @@ This **test case**, named test_login_without_complete_password_field, is a part 
 - **test_suite.py**: Script to run the entire test suite using the provided runner.
 - **Utils** Here are stored the test data used in the test files
 
-## Feature under the tests
+### Feature under the tests
 
- ### Login Functionality Testing:
-1. Validate login with correct credentials.
-2. Test login with correct username and incorrect password.
-3. Test login with a short password.
-4. Test login with wrong credentials.
-5. Test login with an incorrect email format.
-6. Test login without completing any field.
-7. Test login without completing the password field.
+#### Login Functionality Testing:
+1. **Validate login with correct credentials.**
+   - **Test Step:**
+        1. Set the email field with the correct email address obtained from the test data.
+        2. Set the password field with the correct password obtained from the test data. 
+        3. Click the submit button to attempt login.
+        4. Retrieve the elements from the account side menu bar after successful login.
+        5. Define the expected menu items that should be present in the account side menu bar after successful login.
+        6. Verify if each expected menu item is present in the actual menu items retrieved.
+        7. If any expected menu item is missing, raise an AssertionError with a descriptive message indicating the missing element.   
+   - **Expected Result:**
+        - The user should be successfully logged in.
+        - The account side menu bar should be displayed with the expected menu items.
+        - Each expected menu item should be present in the displayed menu.
 
+2. **Test login with correct username and incorrect password.**
+3. **Test login with a short password.**
+4. **Test login with wrong credentials.**
+5. **Test login with an incorrect email format.**
+6. **Test login without completing any field.**
+7. **Test login without completing the password field.**
 
-### Search Functionality Testing:
+#### Search Functionality Testing:
 
-8. Verify product search functionality.
-9. Test searching for a product that exists.
-10. Test searching for a product that doesn't exist.
-11. Test filtering search results by price range.
+8. **Verify product search functionality.**
+9. **Test searching for a product that exists.**
+10. **Test searching for a product that doesn't exist.**
+11. **Test filtering search results by price range.**
+
 
 ## Getting Started  :pushpin:
 
