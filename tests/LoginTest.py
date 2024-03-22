@@ -113,7 +113,6 @@ class TestLoginFeature(unittest.TestCase):
         self.LoginPage.SetPassword(self.DataTest.correct_pass)
         self.LoginPage.ClickSubmitButton()
         self.LoginPage.ClickLogoutButton()
-        time.sleep(2)
         actual_result = self.LoginPage.get_logout_succesfully_message()
         expected_result = 'Te-ai deconectat cu succes'
         assert actual_result == expected_result, (f'The actual result "{actual_result}" does not match the expected '

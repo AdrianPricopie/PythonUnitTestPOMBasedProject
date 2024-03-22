@@ -50,7 +50,6 @@ class TestSearchFeature(unittest.TestCase):
         self.Search.click()
         actual_result = self.Search.get_title_message_for_inexisting_product()
         expected_result = 'Nu există produse pentru filtrele aplicate.'
-        time.sleep(2)
         try:
             self.assertEqual(actual_result, expected_result,
                              f"The expected result is not found in the {actual_result}.")
@@ -67,9 +66,7 @@ class TestSearchFeature(unittest.TestCase):
     def test_filter_by_price_in_rage_200_3280(self):
         self.Search.Enter_product(self.DataTest.product_name)
         self.Search.click()
-        time.sleep(4)
         self.Search.handle_price()
-        time.sleep(2)
         price = self.Search.get_prices_for_products()
         for elemente in price:
             try:

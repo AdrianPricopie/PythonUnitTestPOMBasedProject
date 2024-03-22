@@ -1,3 +1,4 @@
+import time
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from Locators.Login_pages_locators import LoginLocators
@@ -38,6 +39,7 @@ class LoginPage:
         self.driver.find_element(*LoginLocators.COOKIE_ACCEPT_BUTTON).click()
 
     def get_logout_succesfully_message(self):
+        time.sleep(2)
         return WebDriverWait(self.driver, 15).until(
             EC.visibility_of_element_located(LoginLocators.LOGOUT_SUCCES_MESSAGE)
         ).text

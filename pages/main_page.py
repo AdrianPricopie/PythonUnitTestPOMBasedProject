@@ -54,3 +54,4 @@ class MainPage:
 
     def accept_cookies(self):
         self.driver.find_element(*Locators.COOKIE_ACCEPT_BUTTON).click()
+
