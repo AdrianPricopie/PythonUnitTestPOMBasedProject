@@ -207,11 +207,23 @@ This **test case**, named test_login_without_complete_password_field, is a part 
         - Each expected menu item should be present in the displayed menu.
 
 2. **Test login with correct username and incorrect password.**
-3. **Test login with a short password.**
-4. **Test login with wrong credentials.**
-5. **Test login with an incorrect email format.**
-6. **Test login without completing any field.**
-7. **Test login without completing the password field.**
+   - **Test Step:**
+        1. Set the email field with the correct email address obtained from the test data.
+        2. Set the password field with the wrong password obtained from the test data. 
+        3. Click the submit button to attempt login.
+        4. Retrieve the error message displayed after the login attempt.
+        5. Define the expected error message for incorrect password.
+        6. Verify if the actual error message matches the expected error message.
+        7. If the error message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
+
+   - **Expected Result:**
+        - The error message "Parola curentă nu corespunde cu cea pe care ai introdus-o." should be displayed.
+
+4. **Test login with a short password.**
+5. **Test login with wrong credentials.**
+6. **Test login with an incorrect email format.**
+7. **Test login without completing any field.**
+8. **Test login without completing the password field.**
 
 #### Search Functionality Testing:
 
