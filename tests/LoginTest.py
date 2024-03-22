@@ -3,7 +3,7 @@ import unittest
 from datetime import datetime
 from selenium import webdriver
 from pages.login_pages import LoginPage as LP
-from Utils.UtilsForLoginTests import DataTest
+from Utils.UtilsDataForTests import DataTest
 
 
 class TestLoginFeature(unittest.TestCase):

@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -16,6 +18,7 @@ class MainPage:
         self.driver.find_element(*Locators.SEARCH_BAR).send_keys(Keys.ENTER)
 
     def get_product_title_text(self):
+        time.sleep(2)
         title_products = WebDriverWait(self.driver, 15).until(
             EC.presence_of_all_elements_located(Locators.PRODUCT_ITEM_TITLE))
         print(title_products[0].text)

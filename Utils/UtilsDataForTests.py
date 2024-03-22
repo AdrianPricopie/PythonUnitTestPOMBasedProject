@@ -8,3 +8,7 @@ class DataTest:
     items_pressent_in_login_dashboard = ['Cumparaturile mele', 'Vanzarile mele', 'Garantiile mele', 'Asigurarile mele',
                                          'Retur',
                                          'Setari cont', 'Logout']
+
+    product_name = 'iPhone 13'
+    inexisting_product = 'fdsafdasfd'
+    interval_cautare = (200, 3280)
