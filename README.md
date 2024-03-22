@@ -112,6 +112,23 @@ Selector (LoginLocators): Alias for the LoginLocators class from the Locators.Lo
 
 Utils.UtilsDataForTests importing some test data. It's quite common to have utilities that provide test data or helper functions for test automation.
 
+```python
+class DataTest:
+    correct_email = 'Test123z@yahoo.com'
+    short_pass = 'Testc'
+    wrong_pass = 'Testcdsad2@'
+    correct_pass = 'Test123'
+    wrong_format_email = 'Test123zyahoo.com'
+    wrong_email = 'Grigore@yahoo.com'
+    items_pressent_in_login_dashboard = ['Cumparaturile mele', 'Vanzarile mele', 'Garantiile mele', 'Asigurarile mele',
+                                         'Retur',
+                                         'Setari cont', 'Logout']
+
+    product_name = 'iPhone 13'
+    inexisting_product = 'fdsafdasfd'
+    interval_cautare = (200, 3280)
+```
+
 EC (expected_conditions): A module providing a set of predefined conditions to use with WebDriverWait. These conditions are used for intelligent waits in synchronization with the web page state.
 
 WebDriverWait: A class in Selenium that allows waiting for certain conditions to be met before proceeding. It's often used with expected_conditions for synchronization
