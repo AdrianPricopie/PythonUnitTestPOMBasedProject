@@ -294,11 +294,38 @@ This **test case**, named test_login_without_complete_password_field, is a part 
 
 #### Search Functionality Testing:
 
-8. **Verify product search functionality.**
-9. **Test searching for a product that exists.**
-10. **Test searching for a product that doesn't exist.**
-11. **Test filtering search results by price range.**
+9. **Verify product search functionality.**
+   - **Test Step:**
+        1. Enter the product name in the search field obtained from the test data.
+        2. Click the search button to perform the search.
+        3. Retrieve the title text of the product found after the search.
+        4. Define the expected product name from the test data.
+        5. Verify if the actual product title text contains the expected product name.
 
+   - **Expected Result:**
+        - The expected product name should be found in the title text of the product displayed after the search.
+10. **Test searching for a product that doesn't exist.**
+   - **Test Step:**
+        1. Enter the name of a non-existent product in the search field obtained from the test data.
+        2. Click the search button to perform the search.
+        3. Retrieve the message displayed for non-existent product after the search.
+        4. Define the expected message for a non-existent product.
+        5. Verify if the actual message matches the expected message.
+
+   - **Expected Result:**
+        - The message "Nu există produse pentru filtrele aplicate." should be displayed.
+11. **Test filtering search results by price range.**
+   - **Test Step:**
+        1. Enter the product name in the search field obtained from the test data.
+        2. Click the search button to perform the search.
+        3. Apply price filtering within the range of 200 to 3280.
+        4. Retrieve the prices of the products displayed after the search.
+        5. Iterate through each price element.
+        6. Verify if each price element falls within the specified price range.
+        7. If any price element falls outside the specified range, raise an AssertionError with a descriptive message indicating the error.
+
+   - **Expected Result:**
+        - Each product price should fall within the specified price range of 200 to 3280.
 
 ## Getting Started  :pushpin:
 
