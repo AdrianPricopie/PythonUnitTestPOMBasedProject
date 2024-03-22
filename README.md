@@ -123,6 +123,7 @@ EC (expected_conditions): A module providing a set of predefined conditions to u
 
 WebDriverWait: A class in Selenium that allows waiting for certain conditions to be met before proceeding. It's often used with expected_conditions for synchronization
 ```python
+
 class TestLoginFeature(unittest.TestCase):
 
     def setUp(self):
@@ -132,17 +133,33 @@ class TestLoginFeature(unittest.TestCase):
         self.driver.get('https://flip.ro/autentifica-te/')
         self.driver.maximize_window()
 
-        # Accepting cookies
-
-        self.driver.find_element(By.XPATH, '//span[contains(text(), "Da, sunt de acord")]').click()
         self.driver.implicitly_wait(5)
+        # Creating an object for the LoginPage class, which
+        # contains the necessary methods for the login page
         self.LoginPage = LP(self.driver)
+
+        # Accepting cookies
+        self.LoginPage.accept_cookies()
+
+        # Create an object for the DataTest class,which contains the necessary test data
+        self.DataTest = DataTest
 
     def tearDown(self):
         # Closing the browser after each test
         self.driver.quit()
 ```
-This code sets up and tears down the WebDriver for the login feature tests. In the setUp method, it initializes the WebDriver, navigates to the login page, accepts cookies, and creates an instance of the LoginPage class. The tearDown method closes the browser after each test.
+This code defines a unit test for the login functionality on the website https://flip.ro/autentifica-te/. The setUp method is used to prepare the testing environment, and tearDown is used to clean up the testing environment after the test is finished.
+
+The setUp method is called before each test to prepare the testing environment. Here's what it does:
+
+It opens a new web browser (in this case, Chrome) using Selenium WebDriver and navigates to the login page of the website https://flip.ro/autentifica-te/.
+The browser window is maximized to ensure a consistent testing experience.
+implicitly_wait(5) sets a maximum implicit wait time of 5 seconds to find elements on the page.
+An object is created for the LoginPage class (assuming it was previously imported with the alias LP), which contains the necessary methods for the login page.
+It accepts cookies using the accept_cookies() method from the LoginPage class.
+An object is created for the DataTest class, which contains the necessary test data.
+
+The tearDown method is called after each test to clean up and close the testing environment
 
 ```python
  def test_login_without_complete_password_field(self):
