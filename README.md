@@ -4,7 +4,7 @@ Welcome to the documentation for the automated testing project designed for the 
 
 1. [Introduction/Tools and version](#introduction-notebook)
 2. [Project Structure](#project-structure)
-3. [Features Under Testing](#features-under-testing)
+3. [Features Under Testing](#feature-under-the-tests)
     - [Login Functionality Testing](#login-functionality-testing)
     - [Search Functionality Testing](#search-functionality-testing)
 4. [Getting Started](#getting-started)
