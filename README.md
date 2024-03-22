@@ -7,7 +7,6 @@ Welcome to the documentation for the automated testing project designed for the 
 3. [Features Under Testing](#feature-under-the-tests)
     - [Login Functionality Testing](#feature-under-the-tests)
     - [Search Functionality Testing](#search-functionality-testing)
-4. [Getting Started](#getting-started)
     - [Clone the Repository](#clone-the-repository)
     - [Install Dependencies](#install-dependencies)
     - [Activate the Virtual Environment](#activate-the-virtual-environment)
