@@ -8,7 +8,8 @@ Welcome to the documentation for the automated testing project designed for the 
     - [Login Functionality Testing](#feature-under-the-tests)
     - [Search Functionality Testing](#search-functionality-testing)
 4. [Getting-Started](#getting-started--pushpin)
-5. [Conclusion](#conclusions)
+6. [Usage](#usage)
+7. [Conclusion](#conclusions)
 
 
 # Introduction :notebook:
