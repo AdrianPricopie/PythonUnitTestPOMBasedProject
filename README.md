@@ -38,7 +38,7 @@ The project follows the Page Object Model (POM) design pattern, enhancing modula
 The pages directory encapsulates classes representing specific pages on the Flip.ro website, each handling interactions and elements unique to that page.
 For more details about this topics ,you can find [here](https://selenium-python.readthedocs.io/page-objects.html)
 
-![Project Structure](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/Captur%C4%83%20de%20ecran%202024-03-05%20212102.png)
+![Project Structure](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/Screenshot%202024-03-22%20at%2017.18.03.png)
 
 
 - **locators**: Holds locator classes that store all the locators (CSS selectors, XPath ,etc.) used in the project. This separation ensures easy maintenance and updates if the locators change.
