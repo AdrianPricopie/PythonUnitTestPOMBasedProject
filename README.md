@@ -162,8 +162,8 @@ An object is created for the DataTest class, which contains the necessary test d
 The tearDown method is called after each test to clean up and close the testing environment
 
 ```python
- def test_login_without_complete_password_field(self):
-        self.LoginPage.SetEmail('Bobita123@yahoo.com')
+    def test_login_without_complete_password_field(self):
+        self.LoginPage.SetEmail(self.DataTest.correct_email)
         self.LoginPage.ClickSubmitButton()
         actual_result = self.LoginPage.Get_error_message()
         expected_result = 'Parola lipsește.'
@@ -180,13 +180,14 @@ The tearDown method is called after each test to clean up and close the testing 
             # Raise AssertionError without traceback information
             raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
 ```
-Below is a type of test from the 8 tests in this class. This test case checks the behavior of the login functionality when the password field is left incomplete. This is a negative testing scenario (logging in without completing the password field). The test sets an email, clicks the submit button, captures the actual error message, and compares it with the expected result ('Parola lipsește.'). If the actual and expected results don't match, an AssertionError is raised. In case of failure, a screenshot is captured and saved with a timestamp in the filename for identification. The test result, along with the captured screenshot, is then reported.
+This **test case**, named test_login_without_complete_password_field, is a part of a broader test suite designed to validate the login functionality on a website. The test begins by setting the email field with a correct email address and proceeds to click the submit button on the login page. Subsequently, it captures the actual error message displayed on the page after attempting to login without providing a password and compares it with the expected error message, which is "Parola lipsește." (Password is missing). If the actual and expected error messages do not match, an AssertionError is raised. In case of failure, the test captures a screenshot of the page, saves it with a timestamped filename, and raises an AssertionError with a descriptive message indicating the failure along with the path to the saved screenshot. This test ensures that the appropriate error message is shown when attempting to login without entering a password, thus validating the expected behavior of the login functionality.
 
 - **reports**: Automatically generated HTML reports after each test suite run. These reports provide detailed information about the test results.
 - **screenshots**: Automatically captured screenshots for failed test cases. These images are helpful for identifying and debugging issues.
 - **venv**: The virtual environment directory.
 - **requirements.txt**: Lists all the required dependencies for the project. Install these dependencies before running the tests.
 - **test_suite.py**: Script to run the entire test suite using the provided runner.
+- **Utils** Here are stored the test data used in the test files
 
 ## Feature under the tests
 
