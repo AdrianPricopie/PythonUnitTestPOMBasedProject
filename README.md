@@ -9,7 +9,7 @@ Welcome to the documentation for the automated testing project designed for the 
     - [Search Functionality Testing](#search-functionality-testing)
 4. [Getting-Started](#getting-started--pushpin)
 6. [Usage](#usage)
-7.[Reports](#reports)
+7. [Reports](#reports)
 8. [Conclusion](#conclusions)
 
 
