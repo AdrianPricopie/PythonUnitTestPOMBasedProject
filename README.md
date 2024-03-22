@@ -7,7 +7,7 @@ Welcome to the documentation for the automated testing project designed for the 
     - [Locators](#locators)
     - [Pages](#pages)
     - [Tests](#tests)
-    - [Reports, Screenshots, venv, Requirements.txt](#directories-and-files)
+    - [Reports, Screenshots, venv, Requirements.txt,Utils](#directories-and-files)
     - [Test Suite Script](#test-suite-script)
 3. [Features Under Testing](#features-under-testing)
     - [Login Functionality Testing](#login-functionality-testing)
