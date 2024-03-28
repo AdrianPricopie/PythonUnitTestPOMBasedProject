@@ -360,7 +360,8 @@ for mac
 
     ```
 for windows 
-```bash
+ 
+    ```bash
     venv/Scripts/Activate        
     ```
 
