@@ -348,16 +348,12 @@ This **test case**, named test_login_without_complete_password_field, is a part 
 2. **Install Dependencies:**
 
     ```bash
-   pip3 install -r requirments.txt
-    or
     pip install -r requirmments.txt
     ```
 
 3. **Activate the Virtual Environment:**
 
     ```bash
-    venv/Scripts/Activate
-    or
     source venv/bin/activate         
 
     ```
@@ -366,8 +362,6 @@ This **test case**, named test_login_without_complete_password_field, is a part 
 
     ```bash
     python -m unittest Test_Suite.py
-    or
-    python3 -m unittest Test_Suite.py
     ```
 
 
