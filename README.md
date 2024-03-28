@@ -348,7 +348,9 @@ This **test case**, named test_login_without_complete_password_field, is a part 
 2. **Install Dependencies:**
 
     ```bash
-    pip install -r requirements.txt
+   pip3 install -r requirments.txt
+    or
+    pip install -r requirmments.txt
     ```
 
 3. **Activate the Virtual Environment:**
