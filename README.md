@@ -353,9 +353,15 @@ This **test case**, named test_login_without_complete_password_field, is a part 
 
 3. **Activate the Virtual Environment:**
 
+for mac
+
     ```bash
     source venv/bin/activate         
 
+    ```
+for windows 
+```bash
+    venv/Scripts/Activate        
     ```
 
 4. **Run the Test Suite:**
