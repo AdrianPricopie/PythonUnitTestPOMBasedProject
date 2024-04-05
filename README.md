@@ -387,12 +387,12 @@ The project includes HTML reports generated after each test suite run, offering 
 
 - Below, you can see the report generated on March 5, 2024, for the sogin and search functionality
 
-![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/TestReportLogin.png)
-![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/TestReportSearch.png)
+![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/TestReportLogin.png)
+![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/TestReportSearch.png)
 
 -Below,you can see the combine report generated on March 22,2024 for the login and search functionality
 
-![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/Report_Combine_2024.png)
+![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/Report_Combine_2024.png)
 
 All the tests are passed.
 
