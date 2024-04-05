@@ -347,13 +347,25 @@ This **test case**, named test_login_without_complete_password_field, is a part 
     git clone https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject.git
     ```
 
-2. **Install Dependencies:**
+2.**Navigate to the project directory:**
+    
+    ```bash
+    cd PythonUnitTestPOMBasedProject
+    ```
+
+2.**Create venv:**
+    
+    ```bash
+    python -m venv venv
+    ```
+    
+3. **Install Dependencies:**
 
     ```bash
     pip install -r requirmments.txt
     ```
 
-3. **Activate the Virtual Environment:**
+4. **Activate the Virtual Environment:**
 
     for mac
 
@@ -366,16 +378,13 @@ This **test case**, named test_login_without_complete_password_field, is a part 
     ```Terminal
      venv/Scripts/Activate  
     ```
-
-
-4. **Run the Test Suite:**
+    
+5. **Run the Test Suite with html reports:**
 
     ```bash
     python -m unittest Test_Suite.py
     ```
-
-
-
+    
 # Usage
 
 Execute the automated tests to verify the Flip.ro website's login and search functionalities.
