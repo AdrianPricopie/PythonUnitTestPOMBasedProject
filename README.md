@@ -347,13 +347,13 @@ This **test case**, named test_login_without_complete_password_field, is a part 
     git clone https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject.git
     ```
 
-2.**Navigate to the project directory:**
+2. **Navigate to the project directory:**
     
     ```bash
     cd PythonUnitTestPOMBasedProject
     ```
 
-2.**Create venv:**
+2. **Create venv:**
     
     ```bash
     python -m venv venv
