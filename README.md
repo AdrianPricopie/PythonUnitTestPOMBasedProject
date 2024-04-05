@@ -57,10 +57,11 @@ class SearchLocators:
     PRICE_SLIDER_FILTER = (By.XPATH, '//div[@aria-valuetext="8550"]')
  ```
 - **pages**: Contains classes representing specific pages on the Flip.ro website. Each class encapsulates interactions and elements unique to that page.
+
  ```python
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from Locators.Login_pages_locators import LoginLocators
+from Testing_resources.Locators.Login_pages_locators import LoginLocators
 
 
 class LoginPage:
@@ -92,12 +93,13 @@ This class uses intelligent waits, such as WebDriverWait and expected_conditions
 - **tests**: Contains the test scripts organized based on functionalities. Currently, you have the `LoginTest` and `Search_user_test` directories.
   
 These imports are used in the login test file and serve different purposes:
+
 ```python
 import unittest
 from datetime import datetime
 from selenium import webdriver
-from pages.login_pages import LoginPage as LP
-from Utils.UtilsDataForTests import DataTest
+from Testing_resources.pages.login_pages import LoginPage as LP
+from Testing_resources.Utils.UtilsDataForTests import DataTest
 ```
 
 unittest: A module that provides a **testing framework**, allowing the creation and execution of test cases.

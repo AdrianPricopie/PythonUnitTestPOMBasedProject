@@ -1,6 +1,6 @@
 import unittest
-from tests.LoginTest import TestLoginFeature
-from tests.Search_user_test import TestSearchFeature
+from Testing_resources.tests.LoginTest import TestLoginFeature
+from Testing_resources.tests.Search_user_test import TestSearchFeature
 
 import HtmlTestRunner
 
