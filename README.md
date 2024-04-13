@@ -353,19 +353,19 @@ This **test case**, named test_login_without_complete_password_field, is a part 
     cd PythonUnitTestPOMBasedProject
     ```
 
-2. **Create venv:**
+3. **Create venv:**
     
     ```bash
     python -m venv venv
     ```
     
-3. **Install Dependencies:**
+4. **Install Dependencies:**
 
     ```bash
     pip install -r requirmments.txt
     ```
 
-4. **Activate the Virtual Environment:**
+5. **Activate the Virtual Environment:**
 
     for mac
 
@@ -379,7 +379,7 @@ This **test case**, named test_login_without_complete_password_field, is a part 
      venv/Scripts/Activate  
     ```
     
-5. **Run the Test Suite with html reports:**
+6. **Run the Test Suite with html reports:**
 
     ```bash
     python -m unittest Test_Suite.py
