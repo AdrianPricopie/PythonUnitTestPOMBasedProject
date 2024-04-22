@@ -46,3 +46,4 @@ class LoginPage:
 
     def get_validation_message_for_email_field(self):
         return self.driver.find_element(*LoginLocators.EMAIL_SELECTOR).get_attribute('validationMessage')
+

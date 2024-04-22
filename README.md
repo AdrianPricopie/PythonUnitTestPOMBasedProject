@@ -31,7 +31,7 @@ The project follows the Page Object Model (POM) design pattern, enhancing modula
 The pages directory encapsulates classes representing specific pages on the Flip.ro website, each handling interactions and elements unique to that page.
 For more details about this topics ,you can find [here](https://selenium-python.readthedocs.io/page-objects.html)
 
-![Project Structure](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotForGit/Screenshot%202024-04-05%20at%2015.45.17.png)
+![Project Structure](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/Screenshot%202024-04-05%20at%2015.53.00.png)
 
 
 - **locators**: Holds locator classes that store all the locators (CSS selectors, XPath ,etc.) used in the project. This separation ensures easy maintenance and updates if the locators change.
@@ -347,13 +347,25 @@ This **test case**, named test_login_without_complete_password_field, is a part 
     git clone https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject.git
     ```
 
-2. **Install Dependencies:**
+2. **Navigate to the project directory:**
+    
+    ```bash
+    cd PythonUnitTestPOMBasedProject
+    ```
+
+3. **Create venv:**
+    
+    ```bash
+    python -m venv venv
+    ```
+    
+4. **Install Dependencies:**
 
     ```bash
     pip install -r requirmments.txt
     ```
 
-3. **Activate the Virtual Environment:**
+5. **Activate the Virtual Environment:**
 
     for mac
 
@@ -366,16 +378,13 @@ This **test case**, named test_login_without_complete_password_field, is a part 
     ```Terminal
      venv/Scripts/Activate  
     ```
-
-
-4. **Run the Test Suite:**
+    
+6. **Run the Test Suite with html reports:**
 
     ```bash
     python -m unittest Test_Suite.py
     ```
-
-
-
+    
 # Usage
 
 Execute the automated tests to verify the Flip.ro website's login and search functionalities.
@@ -387,12 +396,12 @@ The project includes HTML reports generated after each test suite run, offering 
 
 - Below, you can see the report generated on March 5, 2024, for the sogin and search functionality
 
-![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/TestReportLogin.png)
-![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/TestReportSearch.png)
+![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/TestReportLogin.png)
+![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/TestReportSearch.png)
 
 -Below,you can see the combine report generated on March 22,2024 for the login and search functionality
 
-![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/Report_Combine_2024.png)
+![TestReport Login](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/Report_Combine_2024.png)
 
 All the tests are passed.
 
