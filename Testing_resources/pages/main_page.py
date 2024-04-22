@@ -21,7 +21,7 @@ class MainPage:
         time.sleep(2)
         title_products = WebDriverWait(self.driver, 15).until(
             EC.presence_of_all_elements_located(Locators.PRODUCT_ITEM_TITLE))
-        print(title_products[0].text)
+        # print(title_products[0].text)
         return title_products[0].text
 
     def get_title_message_for_inexisting_product(self):
@@ -47,9 +47,9 @@ class MainPage:
             except ValueError:
                 print(f'eroare la conversia valorii {element.text}')
 
-        print(f'preturile sunt: {get_price}')
+        # print(f'preturile sunt: {get_price}')
 
-        print(get_price)
+        # print(get_price)
         return get_price
 
     def accept_cookies(self):

@@ -30,8 +30,8 @@ class TestLoginFeature(unittest.TestCase):
         self.driver.quit()
 
     def test_login_with_wrong_credentials(self):
-        self.LoginPage.SetEmail(self.DataTest.wrong_email)
-        self.LoginPage.SetPassword(self.DataTest.wrong_pass)
+        self.LoginPage.SetEmail(DataTest.wrong_email)
+        self.LoginPage.SetPassword(DataTest.wrong_pass)
         self.LoginPage.ClickSubmitButton()
         actual_result = self.LoginPage.Get_error_message()
         expected_result = 'Această adresă de email nu este asociată unui cont existent.'
@@ -68,23 +68,23 @@ class TestLoginFeature(unittest.TestCase):
 
     def test_login_with_wrong_format_email(self):
         # Testing error handling when an incorrect email format is provided
-        self.LoginPage.SetEmail(self.DataTest.wrong_format_email)
-        self.LoginPage.SetPassword(self.DataTest.correct_pass)
+        self.LoginPage.SetEmail(DataTest.wrong_format_email)
+        self.LoginPage.SetPassword(DataTest.correct_pass)
         self.LoginPage.ClickSubmitButton()
         # Checking the browser's native validation message for email field
         pop_mesage = self.LoginPage.get_validation_message_for_email_field()
-        expected_result = (f"Please include an '@' in the email address. '{self.DataTest.wrong_format_email}' is "
+        expected_result = (f"Please include an '@' in the email address. '{DataTest.wrong_format_email}' is "
                            f"missing an '@'.")
         self.assertEqual(pop_mesage, expected_result, f"the {pop_mesage} doesn't correspond to the expected result")
 
     def test_login_with_correct_credentials(self):
         # Test login with correct email and password credentials
-        self.LoginPage.SetEmail(self.DataTest.correct_email)
-        self.LoginPage.SetPassword(self.DataTest.correct_pass)
+        self.LoginPage.SetEmail(DataTest.correct_email)
+        self.LoginPage.SetPassword(DataTest.correct_pass)
         self.LoginPage.ClickSubmitButton()
         elements_actual_text = self.LoginPage.Get_account_side_menu_bar()
         # Expected menu items after successful login
-        expected_elements = self.DataTest.items_pressent_in_login_dashboard
+        expected_elements = DataTest.items_pressent_in_login_dashboard
         # Verifying if the expected elements are present in the menu
         try:
             for expected_element in expected_elements:
@@ -101,8 +101,8 @@ class TestLoginFeature(unittest.TestCase):
             raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
 
     def test_login_with_correct_email_field_and_wrong_password(self):
-        self.LoginPage.SetEmail(self.DataTest.correct_email)
-        self.LoginPage.SetPassword(self.DataTest.wrong_pass)
+        self.LoginPage.SetEmail(DataTest.correct_email)
+        self.LoginPage.SetPassword(DataTest.wrong_pass)
         self.LoginPage.ClickSubmitButton()
         actual_result = self.LoginPage.Get_error_message()
         expected_result = 'Parola curentă nu corespunde cu cea pe care ai introdus-o.'
@@ -120,8 +120,8 @@ class TestLoginFeature(unittest.TestCase):
             raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
 
     def test_login_with_short_password(self):
-        self.LoginPage.SetEmail(self.DataTest.correct_email)
-        self.LoginPage.SetPassword(self.DataTest.short_pass)
+        self.LoginPage.SetEmail(DataTest.correct_email)
+        self.LoginPage.SetPassword(DataTest.short_pass)
         self.LoginPage.ClickSubmitButton()
         actual_result = self.LoginPage.Get_error_message()
         expected_result = 'Parola trebuie sa aiba cel putin 6 caractere'
@@ -136,7 +136,7 @@ class TestLoginFeature(unittest.TestCase):
             self.driver.get_screenshot_as_file(screenshot_name)
 
     def test_login_without_complete_password_field(self):
-        self.LoginPage.SetEmail(self.DataTest.correct_email)
+        self.LoginPage.SetEmail(DataTest.correct_email)
         self.LoginPage.ClickSubmitButton()
         actual_result = self.LoginPage.Get_error_message()
         expected_result = 'Parola lipsește.'
@@ -155,8 +155,8 @@ class TestLoginFeature(unittest.TestCase):
 
     def test_login_and_logout(self):
         # Test login and logout
-        self.LoginPage.SetEmail(self.DataTest.correct_email)
-        self.LoginPage.SetPassword(self.DataTest.correct_pass)
+        self.LoginPage.SetEmail(DataTest.correct_email)
+        self.LoginPage.SetPassword(DataTest.correct_pass)
         self.LoginPage.ClickSubmitButton()
         self.LoginPage.ClickLogoutButton()
         actual_result = self.LoginPage.get_logout_succesfully_message()

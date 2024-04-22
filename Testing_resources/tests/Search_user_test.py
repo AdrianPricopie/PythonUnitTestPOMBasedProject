@@ -28,10 +28,10 @@ class TestSearchFeature(unittest.TestCase):
         self.driver.quit()
 
     def test_search_product(self):
-        self.Search.Enter_product(self.DataTest.product_name)
+        self.Search.Enter_product(DataTest.product_name)
         self.Search.click()
         actual_result = self.Search.get_product_title_text()
-        expected_result = self.DataTest.product_name
+        expected_result = DataTest.product_name
         try:
             self.assertIn(expected_result, actual_result, f"The expected result is not found in the {actual_result}.")
         except AssertionError:
@@ -45,7 +45,7 @@ class TestSearchFeature(unittest.TestCase):
             raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
 
     def test_search_product_that_is_not_exist(self):
-        self.Search.Enter_product(self.DataTest.inexisting_product)
+        self.Search.Enter_product(DataTest.inexisting_product)
         self.Search.click()
         actual_result = self.Search.get_title_message_for_inexisting_product()
         expected_result = 'Nu există produse pentru filtrele aplicate.'
@@ -63,13 +63,13 @@ class TestSearchFeature(unittest.TestCase):
             raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
 
     def test_filter_by_price_in_rage_200_3320(self):
-        self.Search.Enter_product(self.DataTest.product_name)
+        self.Search.Enter_product(DataTest.product_name)
         self.Search.click()
         self.Search.handle_price()
         price = self.Search.get_prices_for_products()
         for elemente in price:
             try:
-                self.assertTrue(self.DataTest.interval_cautare[0] <= elemente <= self.DataTest.interval_cautare[1],
+                self.assertTrue(DataTest.interval_cautare[0] <= elemente <= DataTest.interval_cautare[1],
                                 f'Eroare: Elementul {elemente} nu se află în intervalul filtrat.')
 
             except AssertionError:
