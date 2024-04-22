@@ -184,7 +184,7 @@ The tearDown method is called after each test to clean up and close the testing 
                              f"the {actual_result} doesn't correspond to the expected result")
         except AssertionError:
             # Capture and save screenshot in case of failure
-            screenshot_name = 'C:/Users/adi_d/PycharmProjects/ProiectUnitTestExamen/screenshots/' + 'Error_message_for_login' + '_' + datetime.now().strftime(
+            screenshot_name = 'C:/Users/adi_d/PycharmProjects/ProiectUnitTestExamen/screenshots/' + 'Error_message_for_login_without_complete_passw_field' + '_' + datetime.now().strftime(
                 '%d-%m-%Y') + '.png'
 
             self.driver.get_screenshot_as_file(screenshot_name)
