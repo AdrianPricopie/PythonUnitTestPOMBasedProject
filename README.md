@@ -175,7 +175,7 @@ The tearDown method is called after each test to clean up and close the testing 
 
 ```python
     def test_login_without_complete_password_field(self):
-        self.LoginPage.SetEmail(self.DataTest.correct_email)
+        self.LoginPage.SetEmail(DataTest.correct_email)
         self.LoginPage.ClickSubmitButton()
         actual_result = self.LoginPage.Get_error_message()
         expected_result = 'Parola lipsește.'
