@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TestReport</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="text-capitalize">TestReport</h2>
+                <p class='attribute'><strong>Start Time: </strong>2024-07-29 13:06:04</p>
+                <p class='attribute'><strong>Duration: </strong>64.71 s</p>
+                <p class='attribute'><strong>Summary: </strong>Total: 13, Pass: 8, Error: 5</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10">
+                <table class='table table-hover table-responsive'>
+                    <thead>
+                        <tr>
+                            <th>Testing_resources.tests.LoginTest.TestLoginFeature</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_login_and_logout</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_login_with_correct_credentials</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_login_with_correct_email_field_and_wrong_password</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_login_with_short_password</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_login_with_wrong_credentials</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_login_with_wrong_format_email</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_login_without_complete_any_field</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_login_without_complete_password_field</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Total: 8, Pass: 8 -- Duration: 25.78 s
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10">
+                <table class='table table-hover table-responsive'>
+                    <thead>
+                        <tr>
+                            <th>Testing_resources.tests.Search_user_test.TestSearchFeature</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class='warning'>
+                            <td class="col-xs-10">test_filter_by_clicking_radio_button_price</td>
+                            <td class="col-xs-1">
+                                <span class="label label-warning" style="display:block;width:40px;">Error</span>
+                            </td>
+                            <td class="col-xs-1">
+                                <button class="btn btn-default btn-xs">View</button>
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="col-xs-9" colspan="3"><p style="color:maroon;">NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.navbar-search>section>fieldset>div>input"}
+  (Session info: chrome=126.0.6478.183); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001008b6a0c chromedriver + 4385292
+1   chromedriver                        0x00000001008af318 chromedriver + 4354840
+2   chromedriver                        0x00000001004ccb0c chromedriver + 281356
+3   chromedriver                        0x000000010050f2f8 chromedriver + 553720
+4   chromedriver                        0x0000000100547d24 chromedriver + 785700
+5   chromedriver                        0x0000000100503eec chromedriver + 507628
+6   chromedriver                        0x00000001005048c4 chromedriver + 510148
+7   chromedriver                        0x000000010087e3c8 chromedriver + 4154312
+8   chromedriver                        0x0000000100882e2c chromedriver + 4173356
+9   chromedriver                        0x0000000100863f84 chromedriver + 4046724
+10  chromedriver                        0x0000000100883718 chromedriver + 4175640
+11  chromedriver                        0x0000000100856f44 chromedriver + 3993412
+12  chromedriver                        0x00000001008a11a8 chromedriver + 4297128
+13  chromedriver                        0x00000001008a1324 chromedriver + 4297508
+14  chromedriver                        0x00000001008aef10 chromedriver + 4353808
+15  libsystem_pthread.dylib             0x0000000180a72f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000180a6dd34 thread_start + 8
+</p><p style="color:maroon;">Traceback (most recent call last):
+  File "/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/tests/Search_user_test.py", line 95, in test_filter_by_clicking_radio_button_price
+    self.Search.Enter_product(DataTest.product_name)
+  File "/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/pages/main_page.py", line 14, in Enter_product
+    self.driver.find_element(*Locators.SEARCH_BAR).send_keys(product)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.navbar-search>section>fieldset>div>input"}
+  (Session info: chrome=126.0.6478.183); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001008b6a0c chromedriver + 4385292
+1   chromedriver                        0x00000001008af318 chromedriver + 4354840
+2   chromedriver                        0x00000001004ccb0c chromedriver + 281356
+3   chromedriver                        0x000000010050f2f8 chromedriver + 553720
+4   chromedriver                        0x0000000100547d24 chromedriver + 785700
+5   chromedriver                        0x0000000100503eec chromedriver + 507628
+6   chromedriver                        0x00000001005048c4 chromedriver + 510148
+7   chromedriver                        0x000000010087e3c8 chromedriver + 4154312
+8   chromedriver                        0x0000000100882e2c chromedriver + 4173356
+9   chromedriver                        0x0000000100863f84 chromedriver + 4046724
+10  chromedriver                        0x0000000100883718 chromedriver + 4175640
+11  chromedriver                        0x0000000100856f44 chromedriver + 3993412
+12  chromedriver                        0x00000001008a11a8 chromedriver + 4297128
+13  chromedriver                        0x00000001008a1324 chromedriver + 4297508
+14  chromedriver                        0x00000001008aef10 chromedriver + 4353808
+15  libsystem_pthread.dylib             0x0000000180a72f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000180a6dd34 thread_start + 8
+
+</p>
+                            </td>
+                        </tr>
+                        <tr class='warning'>
+                            <td class="col-xs-10">test_filter_by_color</td>
+                            <td class="col-xs-1">
+                                <span class="label label-warning" style="display:block;width:40px;">Error</span>
+                            </td>
+                            <td class="col-xs-1">
+                                <button class="btn btn-default btn-xs">View</button>
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="col-xs-9" colspan="3"><p style="color:maroon;">NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.navbar-search>section>fieldset>div>input"}
+  (Session info: chrome=126.0.6478.183); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000102986a0c chromedriver + 4385292
+1   chromedriver                        0x000000010297f318 chromedriver + 4354840
+2   chromedriver                        0x000000010259cb0c chromedriver + 281356
+3   chromedriver                        0x00000001025df2f8 chromedriver + 553720
+4   chromedriver                        0x0000000102617d24 chromedriver + 785700
+5   chromedriver                        0x00000001025d3eec chromedriver + 507628
+6   chromedriver                        0x00000001025d48c4 chromedriver + 510148
+7   chromedriver                        0x000000010294e3c8 chromedriver + 4154312
+8   chromedriver                        0x0000000102952e2c chromedriver + 4173356
+9   chromedriver                        0x0000000102933f84 chromedriver + 4046724
+10  chromedriver                        0x0000000102953718 chromedriver + 4175640
+11  chromedriver                        0x0000000102926f44 chromedriver + 3993412
+12  chromedriver                        0x00000001029711a8 chromedriver + 4297128
+13  chromedriver                        0x0000000102971324 chromedriver + 4297508
+14  chromedriver                        0x000000010297ef10 chromedriver + 4353808
+15  libsystem_pthread.dylib             0x0000000180a72f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000180a6dd34 thread_start + 8
+</p><p style="color:maroon;">Traceback (most recent call last):
+  File "/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/tests/Search_user_test.py", line 88, in test_filter_by_color
+    self.Search.Enter_product(DataTest.product_name)
+  File "/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/pages/main_page.py", line 14, in Enter_product
+    self.driver.find_element(*Locators.SEARCH_BAR).send_keys(product)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.navbar-search>section>fieldset>div>input"}
+  (Session info: chrome=126.0.6478.183); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000102986a0c chromedriver + 4385292
+1   chromedriver                        0x000000010297f318 chromedriver + 4354840
+2   chromedriver                        0x000000010259cb0c chromedriver + 281356
+3   chromedriver                        0x00000001025df2f8 chromedriver + 553720
+4   chromedriver                        0x0000000102617d24 chromedriver + 785700
+5   chromedriver                        0x00000001025d3eec chromedriver + 507628
+6   chromedriver                        0x00000001025d48c4 chromedriver + 510148
+7   chromedriver                        0x000000010294e3c8 chromedriver + 4154312
+8   chromedriver                        0x0000000102952e2c chromedriver + 4173356
+9   chromedriver                        0x0000000102933f84 chromedriver + 4046724
+10  chromedriver                        0x0000000102953718 chromedriver + 4175640
+11  chromedriver                        0x0000000102926f44 chromedriver + 3993412
+12  chromedriver                        0x00000001029711a8 chromedriver + 4297128
+13  chromedriver                        0x0000000102971324 chromedriver + 4297508
+14  chromedriver                        0x000000010297ef10 chromedriver + 4353808
+15  libsystem_pthread.dylib             0x0000000180a72f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000180a6dd34 thread_start + 8
+
+</p>
+                            </td>
+                        </tr>
+                        <tr class='warning'>
+                            <td class="col-xs-10">test_filter_by_price_in_rage_200_3320</td>
+                            <td class="col-xs-1">
+                                <span class="label label-warning" style="display:block;width:40px;">Error</span>
+                            </td>
+                            <td class="col-xs-1">
+                                <button class="btn btn-default btn-xs">View</button>
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="col-xs-9" colspan="3"><p style="color:maroon;">NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.navbar-search>section>fieldset>div>input"}
+  (Session info: chrome=126.0.6478.183); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000100616a0c chromedriver + 4385292
+1   chromedriver                        0x000000010060f318 chromedriver + 4354840
+2   chromedriver                        0x000000010022cb0c chromedriver + 281356
+3   chromedriver                        0x000000010026f2f8 chromedriver + 553720
+4   chromedriver                        0x00000001002a7d24 chromedriver + 785700
+5   chromedriver                        0x0000000100263eec chromedriver + 507628
+6   chromedriver                        0x00000001002648c4 chromedriver + 510148
+7   chromedriver                        0x00000001005de3c8 chromedriver + 4154312
+8   chromedriver                        0x00000001005e2e2c chromedriver + 4173356
+9   chromedriver                        0x00000001005c3f84 chromedriver + 4046724
+10  chromedriver                        0x00000001005e3718 chromedriver + 4175640
+11  chromedriver                        0x00000001005b6f44 chromedriver + 3993412
+12  chromedriver                        0x00000001006011a8 chromedriver + 4297128
+13  chromedriver                        0x0000000100601324 chromedriver + 4297508
+14  chromedriver                        0x000000010060ef10 chromedriver + 4353808
+15  libsystem_pthread.dylib             0x0000000180a72f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000180a6dd34 thread_start + 8
+</p><p style="color:maroon;">Traceback (most recent call last):
+  File "/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/tests/Search_user_test.py", line 67, in test_filter_by_price_in_rage_200_3320
+    self.Search.Enter_product(DataTest.product_name)
+  File "/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/pages/main_page.py", line 14, in Enter_product
+    self.driver.find_element(*Locators.SEARCH_BAR).send_keys(product)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.navbar-search>section>fieldset>div>input"}
+  (Session info: chrome=126.0.6478.183); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000100616a0c chromedriver + 4385292
+1   chromedriver                        0x000000010060f318 chromedriver + 4354840
+2   chromedriver                        0x000000010022cb0c chromedriver + 281356
+3   chromedriver                        0x000000010026f2f8 chromedriver + 553720
+4   chromedriver                        0x00000001002a7d24 chromedriver + 785700
+5   chromedriver                        0x0000000100263eec chromedriver + 507628
+6   chromedriver                        0x00000001002648c4 chromedriver + 510148
+7   chromedriver                        0x00000001005de3c8 chromedriver + 4154312
+8   chromedriver                        0x00000001005e2e2c chromedriver + 4173356
+9   chromedriver                        0x00000001005c3f84 chromedriver + 4046724
+10  chromedriver                        0x00000001005e3718 chromedriver + 4175640
+11  chromedriver                        0x00000001005b6f44 chromedriver + 3993412
+12  chromedriver                        0x00000001006011a8 chromedriver + 4297128
+13  chromedriver                        0x0000000100601324 chromedriver + 4297508
+14  chromedriver                        0x000000010060ef10 chromedriver + 4353808
+15  libsystem_pthread.dylib             0x0000000180a72f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000180a6dd34 thread_start + 8
+
+</p>
+                            </td>
+                        </tr>
+                        <tr class='warning'>
+                            <td class="col-xs-10">test_search_product</td>
+                            <td class="col-xs-1">
+                                <span class="label label-warning" style="display:block;width:40px;">Error</span>
+                            </td>
+                            <td class="col-xs-1">
+                                <button class="btn btn-default btn-xs">View</button>
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="col-xs-9" colspan="3"><p style="color:maroon;">NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.navbar-search>section>fieldset>div>input"}
+  (Session info: chrome=126.0.6478.183); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001051b2a0c chromedriver + 4385292
+1   chromedriver                        0x00000001051ab318 chromedriver + 4354840
+2   chromedriver                        0x0000000104dc8b0c chromedriver + 281356
+3   chromedriver                        0x0000000104e0b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104e43d24 chromedriver + 785700
+5   chromedriver                        0x0000000104dffeec chromedriver + 507628
+6   chromedriver                        0x0000000104e008c4 chromedriver + 510148
+7   chromedriver                        0x000000010517a3c8 chromedriver + 4154312
+8   chromedriver                        0x000000010517ee2c chromedriver + 4173356
+9   chromedriver                        0x000000010515ff84 chromedriver + 4046724
+10  chromedriver                        0x000000010517f718 chromedriver + 4175640
+11  chromedriver                        0x0000000105152f44 chromedriver + 3993412
+12  chromedriver                        0x000000010519d1a8 chromedriver + 4297128
+13  chromedriver                        0x000000010519d324 chromedriver + 4297508
+14  chromedriver                        0x00000001051aaf10 chromedriver + 4353808
+15  libsystem_pthread.dylib             0x0000000180a72f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000180a6dd34 thread_start + 8
+</p><p style="color:maroon;">Traceback (most recent call last):
+  File "/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/tests/Search_user_test.py", line 32, in test_search_product
+    self.Search.Enter_product(DataTest.product_name)
+  File "/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/pages/main_page.py", line 14, in Enter_product
+    self.driver.find_element(*Locators.SEARCH_BAR).send_keys(product)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.navbar-search>section>fieldset>div>input"}
+  (Session info: chrome=126.0.6478.183); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001051b2a0c chromedriver + 4385292
+1   chromedriver                        0x00000001051ab318 chromedriver + 4354840
+2   chromedriver                        0x0000000104dc8b0c chromedriver + 281356
+3   chromedriver                        0x0000000104e0b2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104e43d24 chromedriver + 785700
+5   chromedriver                        0x0000000104dffeec chromedriver + 507628
+6   chromedriver                        0x0000000104e008c4 chromedriver + 510148
+7   chromedriver                        0x000000010517a3c8 chromedriver + 4154312
+8   chromedriver                        0x000000010517ee2c chromedriver + 4173356
+9   chromedriver                        0x000000010515ff84 chromedriver + 4046724
+10  chromedriver                        0x000000010517f718 chromedriver + 4175640
+11  chromedriver                        0x0000000105152f44 chromedriver + 3993412
+12  chromedriver                        0x000000010519d1a8 chromedriver + 4297128
+13  chromedriver                        0x000000010519d324 chromedriver + 4297508
+14  chromedriver                        0x00000001051aaf10 chromedriver + 4353808
+15  libsystem_pthread.dylib             0x0000000180a72f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000180a6dd34 thread_start + 8
+
+</p>
+                            </td>
+                        </tr>
+                        <tr class='warning'>
+                            <td class="col-xs-10">test_search_product_that_is_not_exist</td>
+                            <td class="col-xs-1">
+                                <span class="label label-warning" style="display:block;width:40px;">Error</span>
+                            </td>
+                            <td class="col-xs-1">
+                                <button class="btn btn-default btn-xs">View</button>
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="col-xs-9" colspan="3"><p style="color:maroon;">NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.navbar-search>section>fieldset>div>input"}
+  (Session info: chrome=126.0.6478.183); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000105256a0c chromedriver + 4385292
+1   chromedriver                        0x000000010524f318 chromedriver + 4354840
+2   chromedriver                        0x0000000104e6cb0c chromedriver + 281356
+3   chromedriver                        0x0000000104eaf2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ee7d24 chromedriver + 785700
+5   chromedriver                        0x0000000104ea3eec chromedriver + 507628
+6   chromedriver                        0x0000000104ea48c4 chromedriver + 510148
+7   chromedriver                        0x000000010521e3c8 chromedriver + 4154312
+8   chromedriver                        0x0000000105222e2c chromedriver + 4173356
+9   chromedriver                        0x0000000105203f84 chromedriver + 4046724
+10  chromedriver                        0x0000000105223718 chromedriver + 4175640
+11  chromedriver                        0x00000001051f6f44 chromedriver + 3993412
+12  chromedriver                        0x00000001052411a8 chromedriver + 4297128
+13  chromedriver                        0x0000000105241324 chromedriver + 4297508
+14  chromedriver                        0x000000010524ef10 chromedriver + 4353808
+15  libsystem_pthread.dylib             0x0000000180a72f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000180a6dd34 thread_start + 8
+</p><p style="color:maroon;">Traceback (most recent call last):
+  File "/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/tests/Search_user_test.py", line 49, in test_search_product_that_is_not_exist
+    self.Search.Enter_product(DataTest.inexisting_product)
+  File "/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/pages/main_page.py", line 14, in Enter_product
+    self.driver.find_element(*Locators.SEARCH_BAR).send_keys(product)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.navbar-search>section>fieldset>div>input"}
+  (Session info: chrome=126.0.6478.183); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000105256a0c chromedriver + 4385292
+1   chromedriver                        0x000000010524f318 chromedriver + 4354840
+2   chromedriver                        0x0000000104e6cb0c chromedriver + 281356
+3   chromedriver                        0x0000000104eaf2f8 chromedriver + 553720
+4   chromedriver                        0x0000000104ee7d24 chromedriver + 785700
+5   chromedriver                        0x0000000104ea3eec chromedriver + 507628
+6   chromedriver                        0x0000000104ea48c4 chromedriver + 510148
+7   chromedriver                        0x000000010521e3c8 chromedriver + 4154312
+8   chromedriver                        0x0000000105222e2c chromedriver + 4173356
+9   chromedriver                        0x0000000105203f84 chromedriver + 4046724
+10  chromedriver                        0x0000000105223718 chromedriver + 4175640
+11  chromedriver                        0x00000001051f6f44 chromedriver + 3993412
+12  chromedriver                        0x00000001052411a8 chromedriver + 4297128
+13  chromedriver                        0x0000000105241324 chromedriver + 4297508
+14  chromedriver                        0x000000010524ef10 chromedriver + 4353808
+15  libsystem_pthread.dylib             0x0000000180a72f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000180a6dd34 thread_start + 8
+
+</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Total: 5, Pass: 0, Error: 5 -- Duration: 38.93 s
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('td').on('click', '.btn', function(e){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                var $this = $(this);
+                var $nextRow = $this.closest('tr').next('tr');
+                $nextRow.slideToggle("fast");
+                $this.text(function(i, text){
+                    if (text === 'View') {
+                        return 'Hide';
+                    } else {
+                        return 'View';
+                    };
+                });
+            });
+        });
+    </script>
+</body>
+</html

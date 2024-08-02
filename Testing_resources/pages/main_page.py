@@ -1,5 +1,4 @@
 import time
-
 from selenium.webdriver import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -16,13 +15,6 @@ class MainPage:
 
     def click(self):
         self.driver.find_element(*Locators.SEARCH_BAR).send_keys(Keys.ENTER)
-
-    def get_product_title_text(self):
-        time.sleep(2)
-        title_products = WebDriverWait(self.driver, 15).until(
-            EC.presence_of_all_elements_located(Locators.PRODUCT_ITEM_TITLE))
-        # print(title_products[0].text)
-        return title_products[0].text
 
     def get_title_message_for_inexisting_product(self):
         title = WebDriverWait(self.driver, 15).until(
@@ -54,3 +46,35 @@ class MainPage:
 
     def accept_cookies(self):
         self.driver.find_element(*Locators.COOKIE_ACCEPT_BUTTON).click()
+
+    ####### new
+
+    def select_color(self, culoare):
+        time.sleep(2)
+        # Wait for the color filters to be present
+        colors = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_all_elements_located(Locators.COLOR_FILTRE)
+        )
+        # Find the correct color filter and click it
+        for element in colors:
+            if element.get_attribute('title') == culoare:
+                element.click()
+                break
+
+    def verify_item_title_include_expected_text(self, expected):
+        time.sleep(2)
+        # Wait for the product titles to be visible
+        WebElements = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_all_elements_located(Locators.PRODUCT_ITEM_TITLE)
+        )
+        # Verify that the expected text is in the product titles
+        for element in WebElements:
+            assert expected in element.text, f"Expected '{expected}', but got '{element.text}'"
+
+    def click_price_radio(self, price_range):
+        radio_elements = self.driver.find_elements(*Locators.PRICE_RADIO_BUTTON_FILTER)
+        for element in radio_elements:
+            if element.text.strip() == price_range:
+                element.click()
+                break
+

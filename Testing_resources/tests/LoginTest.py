@@ -1,8 +1,12 @@
+import time
 import unittest
 from datetime import datetime
 from selenium import webdriver
 from Testing_resources.pages.login_pages import LoginPage as LP
 from Testing_resources.Utils.UtilsDataForTests import DataTest
+from Testing_resources.Utils.Environment import Environment as env
+from Testing_resources.pages.My_account import MyAccount_page as My_account_page
+from selenium.webdriver.chrome.options import Options
 
 
 class TestLoginFeature(unittest.TestCase):
@@ -10,7 +14,11 @@ class TestLoginFeature(unittest.TestCase):
     def setUp(self):
         # Setting up the WebDriver and navigating to the login page
 
-        self.driver = webdriver.Chrome()
+        chrome_options = Options()
+
+        chrome_options.add_argument("--disable-search-engine-choice-screen")
+
+        self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.get('https://flip.ro/autentifica-te/')
         self.driver.maximize_window()
 
@@ -25,6 +33,10 @@ class TestLoginFeature(unittest.TestCase):
         # Create an object for the DataTest class,which contains the necessary test data
         self.DataTest = DataTest
 
+        self.env = env(self.driver)
+
+        self.My_account_page = My_account_page(self.driver)
+
     def tearDown(self):
         # Closing the browser after each test
         self.driver.quit()
@@ -38,15 +50,10 @@ class TestLoginFeature(unittest.TestCase):
         try:
             self.assertEqual(actual_result, expected_result,
                              f"the {actual_result} doesn't correspond to the expected result")
-        except AssertionError:
-            # Capture and save screenshot in case of failure
-            screenshot_name = '/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/Screenshots' + '/Error_message_for_test_login_with_wrong_cred' + '_' + datetime.now().strftime(
-                '%d-%m-%Y') + '.png'
-
-            self.driver.get_screenshot_as_file(screenshot_name)
-
-            # Raise AssertionError without traceback information
-            raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
+        except AssertionError as e:
+            self.env.take_screenshot(
+                'Login_with_wrong_credentials_failure' + '_' + datetime.now().strftime('%d-%m-%Y') + "_")
+            raise e
 
     def test_login_without_complete_any_field(self):
         # Testing error handling when no credentials are provided
@@ -56,15 +63,10 @@ class TestLoginFeature(unittest.TestCase):
         try:
             self.assertEqual(actual_result, expected_result,
                              f"the {actual_result} doesn't correspond to the expected result")
-        except AssertionError:
-            # Capture and save screenshot in case of failure
-            screenshot_name = '/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/Screenshots' + '/Error_message_for_test_login_without_complete_any_field' + '_' + datetime.now().strftime(
-                '%d-%m-%Y') + '.png'
-
-            self.driver.get_screenshot_as_file(screenshot_name)
-
-            # Raise AssertionError without traceback information
-            raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
+        except AssertionError as e:
+            self.env.take_screenshot(
+                'Login_without_complete_any_field_failure' + '_' + datetime.now().strftime('%d-%m-%Y') + "_")
+            raise e
 
     def test_login_with_wrong_format_email(self):
         # Testing error handling when an incorrect email format is provided
@@ -75,7 +77,13 @@ class TestLoginFeature(unittest.TestCase):
         pop_mesage = self.LoginPage.get_validation_message_for_email_field()
         expected_result = (f"Please include an '@' in the email address. '{DataTest.wrong_format_email}' is "
                            f"missing an '@'.")
-        self.assertEqual(pop_mesage, expected_result, f"the {pop_mesage} doesn't correspond to the expected result")
+        try:
+            self.assertEqual(pop_mesage, expected_result, f"the {pop_mesage} doesn't correspond to the expected result")
+
+        except AssertionError as e:
+            self.env.take_screenshot(
+                'Login_with_wrong_fromat_email_failure' + '_' + datetime.now().strftime('%d-%m-%Y') + "_")
+            raise e
 
     def test_login_with_correct_credentials(self):
         # Test login with correct email and password credentials
@@ -90,15 +98,10 @@ class TestLoginFeature(unittest.TestCase):
             for expected_element in expected_elements:
                 self.assertIn(expected_element, elements_actual_text,
                               f"Elementul '{expected_element}' lipsește din meniu,{elements_actual_text}.")
-        except AssertionError:
-            # Capture and save screenshot in case of failure
-            screenshot_name = '/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/Screenshots' + '/Error_message_for_login_with_correct_cred' + '_' + datetime.now().strftime(
-                '%d-%m-%Y') + '.png'
-
-            self.driver.get_screenshot_as_file(screenshot_name)
-
-            # Raise AssertionError without traceback information
-            raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
+        except AssertionError as e:
+            self.env.take_screenshot(
+                'Login_with_correct_credentials_failure' + '_' + datetime.now().strftime('%d-%m-%Y') + "_")
+            raise e
 
     def test_login_with_correct_email_field_and_wrong_password(self):
         self.LoginPage.SetEmail(DataTest.correct_email)
@@ -109,15 +112,10 @@ class TestLoginFeature(unittest.TestCase):
         try:
             self.assertEqual(actual_result, expected_result,
                              f"the {actual_result} doesn't correspond to the expected result")
-        except AssertionError:
-            # Capture and save screenshot in case of failure
-            screenshot_name = '/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/Screenshots' + '/Error_message_for_login_with_correct_email_field_and_wrong_pass' + '_' + datetime.now().strftime(
-                '%d-%m-%Y') + '.png'
-
-            self.driver.get_screenshot_as_file(screenshot_name)
-
-            # Raise AssertionError without traceback information
-            raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
+        except AssertionError as e:
+            self.env.take_screenshot(
+                'Login_with_correct_email_and_wrong_pass_failure' + '_' + datetime.now().strftime('%d-%m-%Y') + "_")
+            raise e
 
     def test_login_with_short_password(self):
         self.LoginPage.SetEmail(DataTest.correct_email)
@@ -128,12 +126,11 @@ class TestLoginFeature(unittest.TestCase):
         try:
             self.assertEqual(actual_result, expected_result,
                              f"the {actual_result} doesn't correspond to the expected result")
-        except AssertionError:
-            # Capture and save screenshot in case of failure
-            screenshot_name = '/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/Screenshots' + '/Error_message_for_login' + '_' + datetime.now().strftime(
-                '%d-%m-%Y') + '.png'
 
-            self.driver.get_screenshot_as_file(screenshot_name)
+        except AssertionError as e:
+            self.env.take_screenshot(
+                'Login_with_short_pass_failure' + '_' + datetime.now().strftime('%d-%m-%Y') + "_")
+            raise e
 
     def test_login_without_complete_password_field(self):
         self.LoginPage.SetEmail(DataTest.correct_email)
@@ -143,15 +140,10 @@ class TestLoginFeature(unittest.TestCase):
         try:
             self.assertEqual(actual_result, expected_result,
                              f"the {actual_result} doesn't correspond to the expected result")
-        except AssertionError:
-            # Capture and save screenshot in case of failure
-            screenshot_name = '/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/Screenshots' + '/Error_message_for_login_without_complete_pass_field' + '_' + datetime.now().strftime(
-                '%d-%m-%Y') + '.png'
-
-            self.driver.get_screenshot_as_file(screenshot_name)
-
-            # Raise AssertionError without traceback information
-            raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
+        except AssertionError as e:
+            self.env.take_screenshot(
+                'Login_without_complete_pass_field_failure' + '_' + datetime.now().strftime('%d-%m-%Y') + "_")
+            raise e
 
     def test_login_and_logout(self):
         # Test login and logout
@@ -162,12 +154,22 @@ class TestLoginFeature(unittest.TestCase):
         actual_result = self.LoginPage.get_logout_succesfully_message()
         expected_result = 'Te-ai deconectat cu succes'
         try:
-            assert actual_result == expected_result, (
-                f'The actual result "{actual_result}" does not match the expected '
-                f'result')
-        except AssertionError:
-            # Capture and save screenshot in case of failure
-            screenshot_name = '/Users/adrianpricopie/proiect/PythonUnitTestPOMBasedProject/Testing_resources/Screenshots' + '/Error_message_for_login_and_logout' + '_' + datetime.now().strftime(
-                '%d-%m-%Y') + '.png'
+            self.assertEqual(expected_result, actual_result)
+        except AssertionError as e:
+            self.env.take_screenshot(
+                'Login_and_logout_failure' + '_' + datetime.now().strftime('%d-%m-%Y') + "_")
+            raise e
 
-            self.driver.get_screenshot_as_file(screenshot_name)
+    def test_session_persistence_after_refresh(self):
+        self.LoginPage.SetEmail(DataTest.correct_email)
+        self.LoginPage.SetPassword(DataTest.correct_pass)
+        self.LoginPage.ClickSubmitButton()
+        actual_result = self.My_account_page.get_title_account_name()
+        expected_result = 'TEST TEST'
+        self.driver.refresh()
+        try:
+            self.assertEqual(expected_result, actual_result)
+        except AssertionError as e:
+            self.env.take_screenshot(
+                'test_session_persistence_after_refresh_failure' + '_' + datetime.now().strftime('%d-%m-%Y') + "_")
+            raise e

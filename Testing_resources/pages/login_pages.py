@@ -1,4 +1,3 @@
-import time
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from Testing_resources.Locators.Login_pages_locators import LoginLocators
@@ -39,10 +38,9 @@ class LoginPage:
         self.driver.find_element(*LoginLocators.COOKIE_ACCEPT_BUTTON).click()
 
     def get_logout_succesfully_message(self):
-        time.sleep(2)
-        return WebDriverWait(self.driver, 15).until(
-            EC.visibility_of_element_located(LoginLocators.LOGOUT_SUCCES_MESSAGE)
-        ).text
+        WebDriverWait(self.driver, 15).until(EC.text_to_be_present_in_element(LoginLocators.LOGOUT_SUCCES_MESSAGE,'Te-ai deconectat cu succes'))
+        message_text = self.driver.find_element(*LoginLocators.LOGOUT_SUCCES_MESSAGE).text
+        return message_text
 
     def get_validation_message_for_email_field(self):
         return self.driver.find_element(*LoginLocators.EMAIL_SELECTOR).get_attribute('validationMessage')
