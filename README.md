@@ -226,7 +226,7 @@ def test_login_with_wrong_format_email(self):
 4. **Install Dependencies:**
 
     ```bash
-    pip install -r requirments.txt
+    pip install -r requirement.txt
     ```
 
 5. **Activate the Virtual Environment:**
