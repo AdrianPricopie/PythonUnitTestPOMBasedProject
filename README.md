@@ -18,7 +18,7 @@ The primary objectives include simulating user interactions and navigating throu
 - **editor code used: pycharm**
 - **Library Versions:**
     ```bash
-     selenium==4.17.2
+    selenium==4.17.2
     webdriver-manager==4.0.1
     html-testRunner==1.2.1
     allure-pytest==2.13.5
