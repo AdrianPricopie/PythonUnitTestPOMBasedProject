@@ -148,21 +148,26 @@ class TestLoginFeature(unittest.TestCase):
 
     def setUp(self):
         # Setting up the WebDriver and navigating to the login page
+        chrome_options = Options()
+        chrome_options.add_argument("--disable-search-engine-choice-screen")
 
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.get('https://flip.ro/autentifica-te/')
         self.driver.maximize_window()
-
         self.driver.implicitly_wait(5)
-        # Creating an object for the LoginPage class, which
-        # contains the necessary methods for the login page
+
+        # Creating an object for the LoginPage class
         self.LoginPage = LP(self.driver)
 
-        # Accepting cookies
-        self.LoginPage.accept_cookies()
-
-        # Create an object for the DataTest class,which contains the necessary test data
+        # Creating an object for the DataTest class, which contains the test data
         self.DataTest = DataTest
+
+        # Creating an object for the MyAccount_page class
+        self.My_account_page = My_account_page(self.driver)
+
+        # Creating an object for the MainPage class and accepting cookies
+        self.Mp = Mp(self.driver)
+        self.Mp.accept_cookies()
 
     def tearDown(self):
         # Closing the browser after each test
