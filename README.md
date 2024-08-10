@@ -54,17 +54,6 @@ class LoginLocators:
     TOAST_MESSAGE_FOR_SUCCES_LOGOUT = (By.XPATH, '//div[@class="toasted bubble success"]')
 
  ```
-
- ```python
-from selenium.webdriver.common.by import By
-class SearchLocators:
-    SEARCH_BAR = (By.CSS_SELECTOR, 'div.navbar-search>section>fieldset>div>input')
-    PRODUCTS_ITEM = (By.CLASS_NAME, 'card-phone-new position-relative d-flex flex-md-column')
-    PRICE_PRODUCTS_ITEM = (By.XPATH, '//div[@data-cy="phone-real-price"]')
-    PRODUCT_ITEM_TITLE = (By.XPATH, '//div[@data-cy="phone-title"]')
-    FILTER_MESSAGE_TITLE = (By.XPATH, '//div[@class="d-flex justify-content-around container"] //h3')
-    PRICE_SLIDER_FILTER = (By.XPATH, '//div[@aria-valuetext="8550"]')
- ```
 - **pages**: Contains classes representing specific pages on the Flip.ro website. Each class encapsulates interactions and elements unique to that page.
 
  ```python
