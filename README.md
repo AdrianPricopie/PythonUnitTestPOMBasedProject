@@ -39,15 +39,22 @@ For more details about this topics ,you can find [here](https://selenium-python.
 - **locators**: Holds locator classes that store all the locators (CSS selectors, XPath ,etc.) used in the project. This separation ensures easy maintenance and updates if the locators change.
 ```python
 from selenium.webdriver.common.by import By
+
 class LoginLocators:
     EMAIL_SELECTOR = (By.CSS_SELECTOR, 'input[autocomplete="current-email"]')
+
     PASSWORD_SELECTOR = (By.CSS_SELECTOR, 'input[autocomplete="current-password"]')
-    GO_TO_MAIN_PAGE = (By.CLASS_NAME, 'btn btn-xs btn-primary  ')
+
+    GO_TO_MAIN_PAGE = (By.CLASS_NAME, 'btn btn-xs btn-primary')
+
     LOGIN_BUTTON = (By.XPATH, '//span[contains(text(), "Acceseaza cont")]')
-    ERROR_MESSAGE_FOR_AUTHENTIFICATION = (By.XPATH, '//div[@class="toasted bubble error"]')
-    ACCOUNT_SIDE_MENU_BAR = (By.CLASS_NAME, 'menu-item')
-    LOGOUT_SUCCES_MESSAGE = (By.XPATH, '//div[@class="toasted bubble success"]')
+
+    TOAST_MESSAGE_ERROR_FOR_AUTHENTIFICATION = (By.XPATH, '//div[@class="toasted bubble error"]')
+
+    TOAST_MESSAGE_FOR_SUCCES_LOGOUT = (By.XPATH, '//div[@class="toasted bubble success"]')
+
  ```
+
  ```python
 from selenium.webdriver.common.by import By
 class SearchLocators:
