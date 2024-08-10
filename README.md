@@ -181,7 +181,7 @@ It opens a new web browser (in this case, Chrome) using Selenium WebDriver and n
 The browser window is maximized to ensure a consistent testing experience.
 implicitly_wait(5) sets a maximum implicit wait time of 5 seconds to find elements on the page.
 An object is created for the LoginPage class (assuming it was previously imported with the alias LP), which contains the necessary methods for the login page.
-It accepts cookies using the accept_cookies() method from the LoginPage class.
+It accepts cookies using the accept_cookies() method from the MainPage class.
 An object is created for the DataTest class, which contains the necessary test data.
 
 - **reports**: Automatically generated HTML reports after each test suite run. These reports provide detailed information about the test results.
