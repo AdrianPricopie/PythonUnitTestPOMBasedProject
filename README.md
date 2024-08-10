@@ -269,7 +269,7 @@ The project includes HTML reports generated after each test suite run, offering 
 
 All the tests are passed.
 
-Update!
+Update!(New tests are added)
 
 -Below,you can see report generated on 10 aug,2024 for the login,search and filter functionality
 
