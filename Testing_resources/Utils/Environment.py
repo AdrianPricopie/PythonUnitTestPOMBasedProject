@@ -2,6 +2,7 @@ import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 
+
 class Environment:
 
     def __init__(self, driver):

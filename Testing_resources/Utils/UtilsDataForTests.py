@@ -12,6 +12,8 @@ class DataTest:
     product_name = 'iPhone 13'
     short_product_name = 'ipho'
     inexisting_product = 'fdsafdasfd'
+    expected_result_message_for_inexisting_prod = 'Rezultate pentru fdsafdasfd 0 produse'
+    expected_result_message_for_numeric_input = 'Rezultate pentru 123456 0 produse'
     interval_cautare = (200, 3320)
     auto_suggest_keyword = 'iphone'
     special_product_name = "lap@top"
@@ -19,7 +21,6 @@ class DataTest:
     numeric_product_name = "123456"
 
     ### NEW
-
 
     ValidColor = 'Albastru'
     ExpectedResultColor = 'Blue'
