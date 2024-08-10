@@ -191,15 +191,16 @@ An object is created for the DataTest class, which contains the necessary test d
 Example of a test:
 
 ```python
-        def test_login_with_wrong_format_email(self):
-        # Testing error handling when an incorrect email format is provided
-        self.LoginPage.SetEmail(DataTest.wrong_format_email)
-        self.LoginPage.SetPassword(DataTest.correct_pass)
-        self.LoginPage.ClickSubmitButton()
-        # Checking the browser's native validation message for email field
-        self.LoginPage.Verify_email_validation_message(
-            expected_message=f"Please include an '@' in the email address. '{DataTest.wrong_format_email}' is "
-                             f"missing an '@'.", test_name='Test_login_with_wrong_format_email')
+def test_login_with_wrong_format_email(self):
+# Testing error handling when an incorrect email format is provided
+    self.LoginPage.SetEmail(DataTest.wrong_format_email)
+    self.LoginPage.SetPassword(DataTest.correct_pass)
+    self.LoginPage.ClickSubmitButton()
+# Checking the browser's native validation message for email field
+    self.LoginPage.Verify_email_validation_message(
+    expected_message=f"Please include an '@' in the email address. '{DataTest.wrong_format_email}' is "
+     f"missing an '@'.", test_name='Test_login_with_wrong_format_email')
+
 ```
 
 ## Getting Started  :pushpin:
