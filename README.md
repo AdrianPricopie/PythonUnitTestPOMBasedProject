@@ -57,14 +57,19 @@ class LoginLocators:
 - **pages**: Contains classes representing specific pages on the Flip.ro website. Each class encapsulates interactions and elements unique to that page.
 
  ```python
+from datetime import datetime
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from Testing_resources.Locators.Login_pages_locators import LoginLocators
+from Testing_resources.Locators.My_account_locators import MyAccountLocators
+from assertpy import assert_that
+from Testing_resources.Utils.Environment import Environment as env
 
 
 class LoginPage:
     def __init__(self, driver):
         self.driver = driver
+        self.env = env(self.driver)
 
     def SetEmail(self, user_email):
         email = self.driver.find_element(*LoginLocators.EMAIL_SELECTOR)
@@ -80,7 +85,7 @@ class LoginPage:
 
     def Get_error_message(self):
         return WebDriverWait(self.driver, 15).until(
-            EC.visibility_of_element_located(LoginLocators.ERROR_MESSAGE_FOR_AUTHENTIFICATION)).text
+            EC.visibility_of_element_located(LoginLocators.TOAST_MESSAGE_ERROR_FOR_AUTHENTIFICATION)).text
  ```
 __init__(self, driver): The class constructor that initializes the driver attribute, representing the Selenium WebDriver.
 
