@@ -184,9 +184,6 @@ An object is created for the LoginPage class (assuming it was previously importe
 It accepts cookies using the accept_cookies() method from the LoginPage class.
 An object is created for the DataTest class, which contains the necessary test data.
 
-
-This **test case**, named test_login_without_complete_password_field, is a part of a broader test suite designed to validate the login functionality on a website. The test begins by setting the email field with a correct email address and proceeds to click the submit button on the login page. Subsequently, it captures the actual error message displayed on the page after attempting to login without providing a password and compares it with the expected error message, which is "Parola lipsește." (Password is missing). If the actual and expected error messages do not match, an AssertionError is raised. In case of failure, the test captures a screenshot of the page, saves it with a timestamped filename, and raises an AssertionError with a descriptive message indicating the failure along with the path to the saved screenshot. This test ensures that the appropriate error message is shown when attempting to login without entering a password, thus validating the expected behavior of the login functionality.
-
 - **reports**: Automatically generated HTML reports after each test suite run. These reports provide detailed information about the test results.
 - **screenshots**: Automatically captured screenshots for failed test cases. These images are helpful for identifying and debugging issues.
 - **venv**:
