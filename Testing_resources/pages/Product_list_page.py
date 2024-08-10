@@ -154,7 +154,6 @@ class ProductsListPage:
     def verify_descending_price(self):
         prices = self.get_prices()
 
-        # Verifica dacă lista de prețuri este goala
         assert len(prices) > 0, "Lista de prețuri este goală."
 
         for i in range(len(prices) - 1):
@@ -193,8 +192,7 @@ class ProductsListPage:
 
     def verify_ascending_price(self):
         prices = self.get_prices()
-
-        # Verifică dacă lista de prețuri este goală
+        
         assert len(prices) > 0, "Lista de prețuri este goală."
 
         for i in range(len(prices) - 1):
@@ -220,6 +218,3 @@ class ProductsListPage:
             if ele.get_attribute('data-cy').split("-")[1] == category:
                 ele.click()
                 break
-
-
-    # def verify_brand_filter(self):
