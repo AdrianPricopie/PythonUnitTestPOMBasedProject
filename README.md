@@ -99,21 +99,19 @@ These imports are used in the login test file and serve different purposes:
 
 ```python
 import unittest
-from datetime import datetime
 from selenium import webdriver
 from Testing_resources.pages.login_pages import LoginPage as LP
 from Testing_resources.Utils.UtilsDataForTests import DataTest
+from Testing_resources.pages.My_account import MyAccount_page as My_account_page
+from selenium.webdriver.chrome.options import Options
+from Testing_resources.pages.main_page import MainPage as Mp
 ```
 
 unittest: A module that provides a **testing framework**, allowing the creation and execution of test cases.
 
-datetime: Offers classes for working with dates and times. In this context, it  be used datetime to append a timestamp to the screenshot filename to ensure each screenshot has a unique identifier, making it easier to organize and identify captured images:
-
 webdriver: Part of the Selenium library, this module provides an API for interacting with web browsers.
 
 LP (LoginPage): Alias for the LoginPage class from the pages.login_pages module. Represents the **page object for the login functionality.**
-
-Selector (LoginLocators): Alias for the LoginLocators class from the Locators.Login_pages_locators module. Contains locators specific to the login page.
 
 Utils.UtilsDataForTests importing some test data. It's quite common to have utilities that provide test data or helper functions for test automation.
 
@@ -130,8 +128,15 @@ class DataTest:
                                          'Setari cont', 'Logout']
 
     product_name = 'iPhone 13'
+    short_product_name = 'ipho'
     inexisting_product = 'fdsafdasfd'
-    interval_cautare = (200, 3280)
+    expected_result_message_for_inexisting_prod = 'Rezultate pentru fdsafdasfd 0 produse'
+    expected_result_message_for_numeric_input = 'Rezultate pentru 123456 0 produse'
+    interval_cautare = (200, 3320)
+    auto_suggest_keyword = 'iphone'
+    special_product_name = "lap@top"
+    expected_result_search = ['MacBook', 'Laptop']
+    numeric_product_name = "123456"
 ```
 
 EC (expected_conditions): A module providing a set of predefined conditions to use with WebDriverWait. These conditions are used for intelligent waits in synchronization with the web page state.
