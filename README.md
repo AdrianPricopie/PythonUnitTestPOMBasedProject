@@ -21,9 +21,11 @@ The primary objectives include simulating user interactions and navigating throu
 - **editor code used: pycharm**
 - **Library Versions:**
     ```bash
-     selenium 4.17.2
-     webdriver-manager 4.0.1
-     html-testRunner 1.2.1
+     selenium==4.17.2
+    webdriver-manager==4.0.1
+    html-testRunner==1.2.1
+    allure-pytest==2.13.5
+    assertpy==1.1
     ```
 # Project Structure
 
@@ -171,173 +173,12 @@ An object is created for the LoginPage class (assuming it was previously importe
 It accepts cookies using the accept_cookies() method from the LoginPage class.
 An object is created for the DataTest class, which contains the necessary test data.
 
-The tearDown method is called after each test to clean up and close the testing environment
 
-```python
-    def test_login_without_complete_password_field(self):
-        self.LoginPage.SetEmail(DataTest.correct_email)
-        self.LoginPage.ClickSubmitButton()
-        actual_result = self.LoginPage.Get_error_message()
-        expected_result = 'Parola lipsește.'
-        try:
-            self.assertEqual(actual_result, expected_result,
-                             f"the {actual_result} doesn't correspond to the expected result")
-        except AssertionError:
-            # Capture and save screenshot in case of failure
-            screenshot_name = 'C:/Users/adi_d/PycharmProjects/ProiectUnitTestExamen/screenshots/' + 'Error_message_for_login_without_complete_passw_field' + '_' + datetime.now().strftime(
-                '%d-%m-%Y') + '.png'
-
-            self.driver.get_screenshot_as_file(screenshot_name)
-
-            # Raise AssertionError without traceback information
-            raise AssertionError(f'Test failed. Screenshot saved at: {screenshot_name}')
-```
 This **test case**, named test_login_without_complete_password_field, is a part of a broader test suite designed to validate the login functionality on a website. The test begins by setting the email field with a correct email address and proceeds to click the submit button on the login page. Subsequently, it captures the actual error message displayed on the page after attempting to login without providing a password and compares it with the expected error message, which is "Parola lipsește." (Password is missing). If the actual and expected error messages do not match, an AssertionError is raised. In case of failure, the test captures a screenshot of the page, saves it with a timestamped filename, and raises an AssertionError with a descriptive message indicating the failure along with the path to the saved screenshot. This test ensures that the appropriate error message is shown when attempting to login without entering a password, thus validating the expected behavior of the login functionality.
 
 - **reports**: Automatically generated HTML reports after each test suite run. These reports provide detailed information about the test results.
 - **screenshots**: Automatically captured screenshots for failed test cases. These images are helpful for identifying and debugging issues.
-- **venv**: The virtual environment directory.
-- **requirements.txt**: Lists all the required dependencies for the project. Install these dependencies before running the tests.
-- **test_suite.py**: Script to run the entire test suite using the provided runner.
-- **Utils** Here are stored the test data used in the test files
-
-### Feature under the tests
-
-#### Login Functionality Testing:
-1. **Validate login with correct credentials.**
-   - **Test Step:**
-        1. Set the email field with the correct email address obtained from the test data.
-        2. Set the password field with the correct password obtained from the test data. 
-        3. Click the submit button to attempt login.
-        4. Retrieve the elements from the account side menu bar after successful login.
-        5. Define the expected menu items that should be present in the account side menu bar after successful login.
-        6. Verify if each expected menu item is present in the actual menu items retrieved.
-        7. If any expected menu item is missing, raise an AssertionError with a descriptive message indicating the missing element.   
-   - **Expected Result:**
-        - The user should be successfully logged in.
-        - The account side menu bar should be displayed with the expected menu items.
-        - Each expected menu item should be present in the displayed menu.
-
-2. **Test login with correct username and incorrect password.**
-   - **Test Step:**
-        1. Set the email field with the correct email address obtained from the test data.
-        2. Set the password field with the wrong password obtained from the test data. 
-        3. Click the submit button to attempt login.
-        4. Retrieve the error message displayed after the login attempt.
-        5. Define the expected error message for incorrect password.
-        6. Verify if the actual error message matches the expected error message.
-        7. If the error message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
-
-   - **Expected Result:**
-        - The error message "Parola curentă nu corespunde cu cea pe care ai introdus-o." should be displayed.
-
-3. **Test login with short password.**
-   - **Test Step:**
-        1. Set the email field with the correct email address obtained from the test data.
-        2. Set the password field with a short password obtained from the test data. 
-        3. Click the submit button to attempt login.
-        4. Retrieve the error message displayed after the login attempt.
-        5. Define the expected error message for a short password.
-        6. Verify if the actual error message matches the expected error message.
-        7. If the error message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
-
-   - **Expected Result:**
-        - The error message "Parola trebuie sa aiba cel putin 6 caractere" should be displayed.
-4. **Test login with wrong credentials.**
-   - **Test Step:**
-        1. Set the email field with a wrong email address obtained from the test data.
-        2. Set the password field with a wrong password obtained from the test data. 
-        3. Click the submit button to attempt login.
-        4. Retrieve the error message displayed after the login attempt.
-        5. Define the expected error message for wrong credentials.
-        6. Verify if the actual error message matches the expected error message.
-        7. If the error message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
-
-   - **Expected Result:**
-        - The error message "Această adresă de email nu este asociată unui cont existent." should be displayed.
-          
-5. **Test login with wrong format email.**
-   - **Test Step:**
-        1. Set the email field with an email address with incorrect format obtained from the test data.
-        2. Set the password field with the correct password obtained from the test data. 
-        3. Click the submit button to attempt login.
-        4. Retrieve the validation message displayed for the email field.
-        5. Define the expected validation message for an incorrect email format.
-        6. Verify if the actual validation message matches the expected validation message.
-        7. If the validation message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
-
-   - **Expected Result:**
-        - The validation message "Please include an '@' in the email address. '{email}' is missing an '@'." should be displayed.
-    
-6. **Test login without completing any field.**
-   - **Test Step:**
-        1. Click the submit button without providing any credentials.
-        2. Retrieve the error message displayed after the login attempt.
-        3. Define the expected error message for missing email.
-        4. Verify if the actual error message matches the expected error message.
-        5. If the error message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
-
-   - **Expected Result:**
-        - The error message "Adresa de e-mail lipsește." should be displayed.
-7. **Test login with correct username and without complete password field .**
-   - **Test Step:**
-        1. Set the email field with the correct email address obtained from the test data.
-        2. Click the submit button without providing any password.
-        3. Retrieve the error message displayed after the login attempt.
-        4. Define the expected error message for a missing password.
-        5. Verify if the actual error message matches the expected error message.
-        6. If the error message doesn't match, raise an AssertionError with a descriptive message indicating the mismatch.
-
-   - **Expected Result:**
-        - The error message "Parola lipsește." should be displayed.
-
-8. **Test login and logout.**
-   - **Test Step:**
-        1. Set the email field with the correct email address obtained from the test data.
-        2. Set the password field with the correct password obtained from the test data. 
-        3. Click the submit button to attempt login.
-        4. Click the logout button to logout from the account.
-        5. Retrieve the success message displayed after logging out.
-        6. Define the expected success message for logging out.
-        7. Verify if the actual success message matches the expected success message.
-
-   - **Expected Result:**
-        - The success message "Te-ai deconectat cu succes" should be displayed.
-
-#### Search Functionality Testing:
-
-9. **Verify product search functionality.**
-   - **Test Step:**
-        1. Enter the product name in the search field obtained from the test data.
-        2. Click the search button to perform the search.
-        3. Retrieve the title text of the product found after the search.
-        4. Define the expected product name from the test data.
-        5. Verify if the actual product title text contains the expected product name.
-
-   - **Expected Result:**
-        - The expected product name should be found in the title text of the product displayed after the search.
-10. **Test searching for a product that doesn't exist.**
-   - **Test Step:**
-        1. Enter the name of a non-existent product in the search field obtained from the test data.
-        2. Click the search button to perform the search.
-        3. Retrieve the message displayed for non-existent product after the search.
-        4. Define the expected message for a non-existent product.
-        5. Verify if the actual message matches the expected message.
-
-   - **Expected Result:**
-        - The message "Nu există produse pentru filtrele aplicate." should be displayed.
-11. **Test filtering search results by price range.**
-   - **Test Step:**
-        1. Enter the product name in the search field obtained from the test data.
-        2. Click the search button to perform the search.
-        3. Apply price filtering within the range of 200 to 3280.
-        4. Retrieve the prices of the products displayed after the search.
-        5. Iterate through each price element.
-        6. Verify if each price element falls within the specified price range.
-        7. If any price element falls outside the specified range, raise an AssertionError with a descriptive message indicating the error.
-
-   - **Expected Result:**
-        - Each product price should fall within the specified price range of 200 to 3280.
+- **venv**:
 
 ## Getting Started  :pushpin:
 
@@ -362,7 +203,7 @@ This **test case**, named test_login_without_complete_password_field, is a part 
 4. **Install Dependencies:**
 
     ```bash
-    pip install -r requirmments.txt
+    pip install -r requirments.txt
     ```
 
 5. **Activate the Virtual Environment:**
