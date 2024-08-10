@@ -2,3 +2,4 @@ selenium==4.17.2
 webdriver-manager==4.0.1
 html-testRunner==1.2.1
 allure-pytest==2.13.5
+assertpy==2.0.0
