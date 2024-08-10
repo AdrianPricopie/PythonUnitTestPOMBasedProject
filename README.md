@@ -273,7 +273,9 @@ Update!
 
 -Below,you can see report generated on 10 aug,2024 for the login,search and filter functionality
 
-![TestReport](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/Report%2010%20aug.png)
+![TestReport](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/report%2010%20aug.png)
+
+All the tests are passed.(19/19)
 
 
 # Conclusions
