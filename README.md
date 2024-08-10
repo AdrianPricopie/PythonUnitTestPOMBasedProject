@@ -4,13 +4,10 @@ Welcome to the documentation for the automated testing project designed for the 
 
 1. [Introduction/Tools and version](#introduction-notebook)
 2. [Project Structure](#project-structure)
-3. [Features Under Testing](#feature-under-the-tests)
-    - [Login Functionality Testing](#feature-under-the-tests)
-    - [Search Functionality Testing](#search-functionality-testing)
-4. [Getting-Started](#getting-started--pushpin)
-6. [Usage](#usage)
-7. [Reports](#reports)
-8. [Conclusion](#conclusions)
+3. [Getting-Started](#getting-started--pushpin)
+4. [Usage](#usage)
+5. [Reports](#reports)
+6. [Conclusion](#conclusions)
 
 
 # Introduction :notebook:
