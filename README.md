@@ -288,9 +288,9 @@ ChromeDriver: Ensure ChromeDriver is installed and properly configured in your s
 
 Python: Python must be installed on the Jenkins server along with pip to install dependencies.
 
-Step-by-Step Guide(for macbook):
+**Step-by-Step Guide(for macbook):**
 
-1.Install the Allure Plugin in Jenkins
+**1.Install the Allure Plugin in Jenkins**
 
 Access Jenkins Dashboard:
 
@@ -302,7 +302,7 @@ Select Manage Plugins.
 In the Available tab, search for "Allure".
 Check the box next to Allure Jenkins Plugin and click Install without restart.
 
-2.Install Allure Commandline Tool
+**2.Install Allure Commandline Tool**
 
 Go to Manage Jenkins > Global Tool Configuration.
 Scroll down to the Allure Commandline section.
@@ -310,7 +310,8 @@ Click Add Allure Commandline and provide the name (e.g., Allure).
 Set the installation directory if it’s installed manually or use the automatic installer option.
 Save the configuration
 
-3.Create a New Jenkins Job
+**3.Create a New Jenkins Job**
+
 Open Jenkins in your web browser.
 Click on New Item and give your project a name.
 Select Freestyle project and click OK.
@@ -319,7 +320,8 @@ Select Freestyle project and click OK.
 ![jenkins2](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/jenkins%232.png)
 
 
-4.Configure Source Code Management (SCM)
+**4.Configure Source Code Management (SCM)**
+
 Under the Source Code Management section, select Git.
 Enter the repository URL: https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject.git
 Authentication is required, add your credentials.
@@ -329,7 +331,8 @@ In the Branches to build field, specify */master to ensure the job only runs on 
 ![jenkins4](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/jenkins%234.png)
 
 
-5.Build Configuration
+**5.Build Configuration**
+
 In the Build section, click Add build step and select Execute Shell (or Execute Windows batch command if you're on Windows).
 Add the following commands to create a virtual environment, activate it, install dependencies, and run your tests:
 
@@ -341,14 +344,17 @@ python3 -m pytest Testing_resources/tests/**.py --alluredir=allure-result
 
 ```
 
-6.Add post-build action
+**6.Add post-build action**
 
 Scroll down to the Post-build Actions section.
 Click Add post-build action and select Allure Report.
 Set the Path to allure-result, which is where the test results will be stored.
 
 
-7.Save the configuration and run the job.
+**7.Save the configuration and run the job.**
+
+
+![jenkins5](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/jenkins%235.png)
 
 
 
