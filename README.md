@@ -288,7 +288,7 @@ ChromeDriver: Ensure ChromeDriver is installed and properly configured in your s
 
 Python: Python must be installed on the Jenkins server along with pip to install dependencies.
 
-Step-by-Step Guide:
+Step-by-Step Guide(for macbook):
 
 1.Install the Allure Plugin in Jenkins
 
