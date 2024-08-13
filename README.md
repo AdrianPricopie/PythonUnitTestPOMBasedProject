@@ -351,7 +351,7 @@ Click Add post-build action and select Allure Report.
 Set the Path to allure-result, which is where the test results will be stored.
 
 
-**7.Save the configuration and run the job.**
+**7.Save the configuration and run the build.**
 
 ![jenkins5](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/jenkins%237.png)
 
