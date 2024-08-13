@@ -7,7 +7,8 @@ Welcome to the documentation for the automated testing project designed for the 
 3. [Getting-Started](#getting-started--pushpin)
 4. [Usage](#usage)
 5. [Reports](#reports)
-6. [Conclusion](#conclusions)
+6. [Integrate with jenkins](#integrate-with-jenkins)
+7. [Conclusion](#conclusions)
 
 
 # Introduction :notebook:
