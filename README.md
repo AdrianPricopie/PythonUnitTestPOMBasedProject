@@ -274,15 +274,92 @@ Update!(New tests are added)
 
 All the tests are passed.(19/19)
 
+# Integrate with jenkins 
+
+Integrating with Jenkins :gear:
+Integrating this automated testing project with Jenkins allows for continuous integration and continuous deployment (CI/CD), ensuring that tests are automatically run every time there's a change in the codebase. This section will guide you through setting up Jenkins to run your tests.
+
+Prerequisites
+Jenkins Installation: Ensure that Jenkins is installed on your system or server. You can download Jenkins from here.
+
+Git Installation: Make sure Git is installed on your Jenkins server to pull the latest changes from your repository.
+
+ChromeDriver: Ensure ChromeDriver is installed and properly configured in your system's PATH. The version of ChromeDriver should match the installed version of Google Chrome.
+
+Python: Python must be installed on the Jenkins server along with pip to install dependencies.
+
+Step-by-Step Guide:
+
+1.Install the Allure Plugin in Jenkins
+
+Access Jenkins Dashboard:
+
+Log in to your Jenkins instance.
+Install the Allure Plugin:
+
+From the Jenkins dashboard, click on Manage Jenkins.
+Select Manage Plugins.
+In the Available tab, search for "Allure".
+Check the box next to Allure Jenkins Plugin and click Install without restart.
+
+2.Install Allure Commandline Tool
+
+Go to Manage Jenkins > Global Tool Configuration.
+Scroll down to the Allure Commandline section.
+Click Add Allure Commandline and provide the name (e.g., Allure).
+Set the installation directory if it’s installed manually or use the automatic installer option.
+Save the configuration
+
+3.Create a New Jenkins Job
+Open Jenkins in your web browser.
+Click on New Item and give your project a name.
+Select Freestyle project and click OK.
+
+![jenkins](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/jenkins%231.png)
+![jenkins2](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/jenkins%232.png)
+
+
+4.Configure Source Code Management (SCM)
+Under the Source Code Management section, select Git.
+Enter the repository URL: https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject.git
+Authentication is required, add your credentials.
+In the Branches to build field, specify */master to ensure the job only runs on the master branch.
+
+![jenkins3](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/jenkins%233.png)
+![jenkins4](https://github.com/AdrianPricopie/PythonUnitTestPOMBasedProject/blob/master/ScreenshotsForGit/jenkins%234.png)
+
+
+5.Build Configuration
+In the Build section, click Add build step and select Execute Shell (or Execute Windows batch command if you're on Windows).
+Add the following commands to create a virtual environment, activate it, install dependencies, and run your tests:
+
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python3 -m pytest Testing_resources/tests/**.py --alluredir=allure-result
+
+```
+
+6.Add post-build action
+
+Scroll down to the Post-build Actions section.
+Click Add post-build action and select Allure Report.
+Set the Path to allure-result, which is where the test results will be stored.
+
+
+7.Save the configuration and run the job.
+
+
 
 # Conclusions
 
-In conclusion, the automated testing project for the Flip.ro website has been successfully implemented using Selenium and the unittest framework. The Page Object Model (POM) design pattern was employed to enhance modularity and maintainability, allowing for efficient management of locators, pages, and test scripts.
+The automated testing project for the Flip.ro website is a significant step towards ensuring the quality and reliability of the platform's core functionalities. By leveraging Selenium and the unittest framework, the project delivers a robust suite of tests that simulate real-world user interactions, providing valuable insights into the stability and performance of the website.
 
-The project covers critical functionalities such as login and search, with a focus on various test scenarios to ensure robustness. The tests are organized into a structured project layout, including locators, pages, tests, reports, screenshots, and a virtual environment. The project also provides clear documentation on how to clone the repository, install dependencies, activate the virtual environment, and run the test suite
+The use of the Page Object Model (POM) design pattern enhances the project's modularity and maintainability, allowing for efficient updates and scalability as the website evolves. The clear organization of the project into locators, pages, and test scripts ensures that the test suite remains easy to manage and extend.
 
-Automated tests have been designed to cover a range of scenarios, including positive and negative cases for the login functionality, as well as comprehensive testing of the search functionality. Screenshots are captured for failed test cases, providing visual aids for debugging and issue identification.
+Additionally, the integration with Jenkins and the inclusion of Allure reports enable continuous integration and continuous deployment (CI/CD), making it easier to detect and address issues promptly. The project's comprehensive documentation, including detailed steps for setup, execution, and reporting, ensures that it is accessible to both new contributors and experienced developers.
 
-In the future, the project can be expanded to cover additional functionalities and scenarios, ensuring continuous testing and validation of the Flip.ro webshop. Regular maintenance and updates to locators and test scripts will be crucial as the website evolves.
+Looking forward, the project provides a solid foundation for expanding the test coverage to include additional functionalities and scenarios, further enhancing the website's resilience. Regular updates to the locators and test scripts, coupled with the continuous improvement of the testing framework, will ensure that Flip.ro remains a reliable and user-friendly platform for its customers.
 
 
